@@ -1,0 +1,916 @@
+2021-10-28 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: 
+
+2021-10-26 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: 久しぶり．
+
+2021-05-24 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* sauron: VScodeでsauronに接続．ssh時の.bashrc,.bash_profileの記述によっては接続に問題あり．
+	今回はlogファイル生成部分が問題だった．
+	(url: https://www.server-memo.net/memo/vscode/vscode_ssh.html
+https://qiita.com/nlog2n2/items/1d1358f6913249f3e186 )
+
+2021-05-23 (Sun)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* things: thingsのクイック入力をshift+spaceに変更した．
+	(url: https://apple-relationship.com/diary/things-for-mac%E3%81%AE%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E5%85%A5%E5%8A%9B%E3%81%8C%E8%90%BD%E3%81%A1%E3%82%8B%E4%BA%BA%E3%81%AF/ )
+
+2021-05-11 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* gnuplot: gnuplotの設定ファイルは，gnuplot起動後にshow loadpathとして，gnuplotrcを探せばよい．
+	(url: http://yanagibrow.hateblo.jp/entry/20130101/1357030013)
+
+	* emacs: 同様に，今まで~/diaryにあったこのlogファイルも，~/Documents/diaryに移動した．そのためにinit.elを変更した．
+	
+
+	* mac: ~以下のディレクトリの整理を行った．nextcloud, creativecloud,googledriveの同期先を~/Documents/clouds/以下に変更した．
+	また，calibreのライブラリも~/Document以下に変更した．
+	(url: https://blog-and-destroy.com/18951#:~:text=%E4%B8%8A%E9%83%A8%E3%81%AE%E3%83%A2%E3%82%B6%E3%82%A4%E3%82%AF%E3%81%A8%E3%81%AA%E3%81%A3,%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%82%92%E9%81%B8%E6%8A%9E%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
+	
+
+2021-05-06 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* 
+
+	* nebo: どうもneboが使いにくい場合がある． exportするとき，数式の中に四角でかこった部分や丸で囲った部分があるとその部分がちゃんと変換されない事象があるように感じる． そもそも数式はちゃんと認識されないので，はじめから数式枠ではなくてスケッチオブジェクトを使って数式を書くようにすれば良いのではないかと思う．
+
+2021-04-13 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* 
+
+2021-04-05 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* macports: gnuplotがなかったことになっていたので，macportsから入れようとするも失敗．
+	bigsurの一部でcommand line toolのversionをあげる必要があるということでversion12.4を入れた．
+
+2021-03-14 (Sun)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: big surになって，background musicアプリのversionを上げる必要性があった．
+	(url: https://github.com/kyleneideck/BackgroundMusic/releases/tag/0.4.0-SNAPSHOT-c0ab98b)
+	
+
+2021-02-24 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: 懸案だった~/Libraryの表示は，~に移動後に表示タブ→表示オプションを表示．を使って常時表示可能．
+	(url: https://gori.me/mac/mac-tips/77384 )
+	
+	* epub: 楽天koboのファイルの場所は
+	/Library/Application Support/Kobo/Kobo Desktop Edition/Kepub
+	だが，特にここを弄る必要はない．
+	calibreを開いて，右上のObok DeDRMをクリックすればよいだけ．
+	(url: https://www.programming-se.com/?p=4618 )
+
+	
+
+	* ibook: とりあえずipadで使うepubリーダーに純正ibooksを使うことにする．
+	そのためにibookの整理を行う． ibookのPCでの保存場所は
+	/Users/amanotomohito/Library/Mobile Documents/iCloud~com~apple~iBooks/Documents
+	だった．
+	(url: https://apple.stackexchange.com/questions/296462/locating-the-ibooks-folder-in-icloud-drive )
+	ただし，相変わらずibookは階層構造を作って保管できないっぽいんだよなぁ．
+	→ 一応，直接サブフォルダをPCで作ることで，フォルダ管理は可能．しばらくはこれでつかってみよう．
+
+
+	* mac: macの純正メールアプリで重要フォルダにメールが勝手に振り分けされてしまう問題．
+	これはそもそもgmailの問題で，ブラウザのgmailページで設定→受信フォルダ→重要を使わない
+	と設定する必要あり．
+
+2021-02-13 (Sat)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: big surへアップデート
+
+	* mac: デスクトップ時計をインストール．これは割とカスタマイズ出来るので良いかも．
+	これを常にimac-oldに表示しておけばよい．
+	
+        * mac: screen saver用にfliqloをDL．これでscreen saverが時計になる．
+
+	* mac: macbookに入れていたkeepassXCをこちらにもDL.
+
+	* mac: 前々からやりたかったurlをslackで共有するやつ．
+	chromeにslinkyというアプリがあって，これで実行できた．
+	(url: https://risaki-masa.com/slinky-in-chrome/#:~:text=%E9%96%B2%E8%A6%A7%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%A7%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%97%E3%80%81%E3%80%8CShare,URL%E3%81%8C%E5%85%B1%E6%9C%89%E3%81%95%E3%82%8C%E3%82%8B%E3%80%82 )
+	つまづいたのがslackのtokenの方． どうもAPIがslack appというものに移行になっている．
+	１：slack appを作る．ここでscopeをいじってappにどこまでやらせるか決める．
+	２：appをグループにDL．
+	３：appをchannelに追加（これはslackのappから出来る）
+	という3つの手順を踏む必要がある．DLしたときにappのトークンを取得出来るので，これをslinkyに入れてやればよい．
+        xoxb-767719725634-1754268435684-egoXCfn0LHc6gO9pS2Oelwg7
+	が今回のtoken.
+	
+	ネットには古いAPIや，古いappを用いたやり方が乗っているので混乱しがちなので注意．
+
+	今回の件やkeepassXCの件があるので，defaultをsafariからchromeへ乗り換えることにしよう．
+	
+	
+2021-02-10 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: 楽天koboを初使用．そして，これをpdf化することに成功した．
+	(url: https://www.programming-se.com/?p=4618)
+	ひとつ注意が必要なのが，calibreとプラグインのversionの関係．
+	これはプラグインのgithubページ
+	(url : https://github.com/apprenticeharper/DeDRM_tools/releases/tag/v6.8.0 )
+	に書いてあるのでそこをよく読むこと．
+	calibreのページはこれ
+	(url : https://calibre-ebook.com )
+
+	→ どうやらamazonのkindleも同じことができるようなので，アクアライフはこっちに以降した方がよいかも．
+	
+
+2021-01-21 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* finder: macのfinderでfolderの容量を表示する方法
+	(url: https://support.borndigital.co.jp/hc/ja/articles/360004077014 )
+
+	* photo: lightroom classic とccの同期がストレージ要領のせいであまりうまくいってないようなので，
+	当面はmacの写真と並行でつかっていくことにする．
+	あと，やっぱりHDDは動作が重すぎるきらいがあるので，このデータはあとでSSDに動かしてしまう方がよい．
+	
+
+	* photo: macの写真から移行したことで，日付データが間違っているものが全て元どおりになってしまった．
+	この問題を回避するために，直接元ファイルのexifを編集できるソフトとして，photo editを入れて使ってみた．
+	(url: https://www.tranquillitybase.jp/PTE/PhotoTimeEdit.html )
+
+	* photo: macの写真アプリから，lightroomへ移行．この時，lightroomへ直接移行するのは無理そうだったので，一旦lightroomCCを経由してからクラウドの同期を行った．
+	このあとクラウドの同期を切って仕舞えば問題ない．保存先として新しくappleのHDDを選択した．バックアップとしてgoogle driveを使うのが良いかもしれないのであとでテストしよう．
+	また，ゆくゆくのことを考えるとluninar aiなんかを買ってadobeから離れられるようにしておいた方がよいかもしれない．
+	
+
+2021-01-19 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: macで録音しながら音を聴く@zoomなどのことを考える．
+	(url: https://hazukilab.com/background-music/ )
+	このためには，background musicアプリを起動しないといけない！！
+	出力とかをbackground musicにするだけじゃなくて．
+	
+
+2021-01-18 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: macの日記アプリとして，cloverdiaryをinstall. 完全無料はこれしかみつからなかった．
+	ほかに 
+
+	
+	* mac: macの便利アプリとして，copyclipをinstall. copy履歴を辿れる．
+
+	* mac: macの便利アプリとして，cheatsheetをinstall. これはショトカのチートシートをみられるもの．
+
+	* mac: macの便利アプリとして，alfred4をinstall. spotlightの拡張．
+	
+
+	
+
+2021-01-17 (Sun)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* audio: pioneerのBDR-X12J-UHDを使用開始．これを使うために，mac用にユーティリティ
+	(url: https://pioneer.jp/device/list_wr_dr.html)
+	をインストール．これは多分一回設定すれば2度と使わないタイプのアプリっぽい．
+
+	* audio: 取り込みの高性能化のためXLDを導入．
+	(url: https://audio-seion.com/mac-cd-import/)
+	これはだいぶ読み込みに時間はかかるけどエラーチェックを細かく設定できる．
+	ただし，自動でitunesライブラリに読み込んでくれることはないっぽい．
+	今はDLフォルダに入れてから，ミュージックに自動的に追加フォルダに入れている．
+	自動的に追加フォルダに直接読み込んでもうまく行かなかったので現状はこれで．
+
+	
+
+
+	* bootcamp: macosとwindowsで共有の領域を作れるらしい．
+	(url: https://yama-mac.com/mac_bootcamp_windows_share_folder/)
+	
+
+2020-12-28 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* thunderbird: 
+
+	(url: https://okwave.jp/qa/q9775908.html )
+
+	* thunderbird: thunderbirdでのアカウントの追加方法．
+	(url: https://light-road.blogspot.com/2019/05/thunderbird-gmail-2.html )
+
+2020-12-24 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: plotdigitizerを更新
+	(url: https://sourceforge.net/projects/plotdigitizer/ )
+	macbook proで使っているものと同一．
+
+	
+2020-11-11 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* shell: 256色を出力する方法は以下のコマンド．
+	( curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash )
+
+2020-10-13 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs:emacsの拡張子によるモード判定は，
+	(add-to-list 'auto-mode-alist '("\\.pyx\\'" . python-mode))
+	のように行う．
+	( url: https://blog.goo.ne.jp/dak-ikd/e/01b45dc521b48536fbd0ac4d6a4a4d6e )
+
+2020-10-12 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: 
+
+	* emacs: c++のライブラリeigenを/opt/local/include/gcc5/c++に置いた．
+	ここは，g++のincludeを探すpathに入ってた．
+	→ この方法だとうまく行かなかったのと，ちょっとこのdirを弄るのは怖いので，
+	とりあえずhome-dirに置いておいて，includeで絶対パスを指定するようにした．
+
+	* gnuplot: gnuplotのスクリプトでは，\を入れることで改行が許される．
+
+2020-10-11 (Sun)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* walkman: androidでは，youtube vancedという野良アプリを使って，youtubeのバックグラウンド再生，広告なしに対応する．
+	これでwalkmanの使い道ができたのは大きい．しばらくは音楽+youtube専用で使っていこう．
+	ニコニコにも同じようなバックグラウンド再生できるやつないのかな．
+
+2020-10-10 (Sat)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* HHKB: 新しいmacに設定する場合，設定→kbd→kbdの種類を変更で，右shiftの隣は_のキーにしないとダメ．
+	(url: https://faq.pfu.jp/faq/show/2618?back=front%2Fcategory%3Ashow&category_id=234&page=1&site_domain=hhkb&sort=sort_access&sort_order=desc )
+
+2020-09-08 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* iphone: クラシックを配信しているottavaというネットラジオを聞きたくなった．
+	アプリFSstreamをダウンロードし，favorateにURLを入れる．そのURLは
+	https://showhyuga.blogspot.com/2015/06/ottava.html?m=1
+	を参考にした．（どうもたまにここがかわるらしいので，繋がらなくなったらここを疑うこと）
+
+2020-07-28 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* walkman: baseline jpegでも，600*600（ミケランジェリの映像）や800*800（ルービンシュタインのワルツ）などは表示されないという例が出てきた．．．これらはとりあえずそのままにしておこう．
+
+	* terminal: プログレッシブjpegかの判定をコマンドラインでやる方法．
+	rdjpgcom -verbose ファイル名
+	でよい．
+	(url : https://blog.goo.ne.jp/kunibu/e/638770b9a235cae8d4599dd43ace49e5 )
+
+	* terminal: 同じくファイルの変換についてなのだが，convertでやるとbaseline jpegになるのでこれを使えばよい．
+
+2020-07-23 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* walkman: WM1Aの方のみアートワークが表示されない場合がいくつかある．これはどうもファイル形式に縛りがあるためらしい．
+	(url : http://refuge06.blog54.fc2.com/blog-entry-936.html )
+	というわけで，アートワークのファイル形式をすべてベースラインjpegに変換する作業をはじめた．
+
+2020-07-15 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: 
+
+	* mac: なぜかoldimacの画像収録ができなくなってしまった．
+	で，newimacの方は音声が入らない．結局原因がわからないので，新しいソフトを入れた．
+	(url : https://btuber.jp/mac-screen-movie-internal-sound/ )
+	これで，UIなしのbackground musicを選択すればよい．mac自体の出力もBackground musicにするのを忘れずに．
+	このソフトの偉い所は，soundflowerと違って音も流れてくれるところ．これなら授業を聞きながらの録音が可能だ．
+	
+
+	
+
+2020-07-14 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: パワポでフッターを入れる方法．
+	(url : https://www.crie.co.jp/chokotech/detail/102/ )
+
+	* emacs: 
+
+	* mac:ターミナルからfinderを開く方法．
+	open パス
+	でよい．
+	(url : https://qiita.com/ShinichiOkayama/items/53ddd4cdeb82b3e37efb )
+
+	* mac: パワポの見出しフォントにヒラギノを入れる方法．
+	(url : http://ginko036.blog.fc2.com/blog-entry-217.html )
+
+	* emacs: emacsでcontrol+Zを押すと中断してしまう現象をどうにかしたい．
+	→原因がわかった．\C-x \C-z でemacsが閉じるっぽい．
+
+2020-07-13 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: org-modeでの表計算．
+	(url : https://qiita.com/zonkyy/items/36a590b49a9237907335 )
+	とりあえずは\C-c =で計算できることを覚えておこう．
+
+2020-07-08 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: pythonの改行は\で明示することができる．
+	(url : https://www.glamenv-septzen.net/view/185 )
+
+2020-07-02 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* hhkb: HHKBのmac用のキーマップ変更ツールが発表されてた．
+	(url : https://happyhackingkb.com/jp/download/ )
+
+2020-06-26 (Fri)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs:org-mode
+
+2020-06-25 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: 
+
+	* emacs: texで，改行をまたいでカッコをつける方法．
+
+	\left\{ xxxxxxxxx \right. \\
+ \left. yyyyyyyyy  \right\}
+	
+	(url : https://ossyaritoori.hatenablog.com/entry/2017/01/12/Tex_改行をまたいで括弧をつける )
+
+2020-06-23 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: org-modeでは，emacsを開いているといつでもTODOリストの追加ができる．
+	これをキャプチャと呼ぶらしい．
+
+2020-06-22 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* python: pythonの真偽値はbool型に格納される．
+
+2020-06-19 (Fri)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: プリンターでモノクロ印刷するときは，プリント画面のプレビューのタブをクリックして，カラー設定に変えられる．
+
+	* mac: 
+
+2020-06-17 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* others: NHKの語学ラジオはNHKラジオ第2でやっていて，これはラジルラジルでのみ聞くことができる．
+
+	* shell: 
+
+	* shell: shellスクリプトで文字列を結合するには
+	str=$str1$str2
+	str="${str1} is interesting"
+	とすればよい．
+	(url : https://hacknote.jp/archives/20987/ )
+	(url : https://qiita.com/Esfahan/items/e88bb806c7ca1dc8b758 )　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 
+
+	* shell: shellスクリプトで引数を受け取るには，$1，$2などをつかう．
+	(url : https://www.atmarkit.co.jp/ait/articles/1810/07/news001.html )
+
+2020-06-15 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: zshのもとでyoutube-dlを使うと，no match foundというエラーがでる．
+	これはzshがURL部分をコマンドと解釈してしまうためで，URLを""で囲めば解決する．
+	(url : https://superuser.com/questions/649635/zsh-says-no-matches-found-when-trying-to-download-video-with-youtube-dl )
+
+	* mac: youtube-dlで最高画質+音質でDLする方法．
+	(url : https://knooto.info/youtube-dl/#動画をダウンロードする )
+	(url : https://qiita.com/shiooooooooon/items/dd86601ebdfe09591686 )
+
+	* mac: webmファイルをmp4に変換するのにはffmpegを使う．ffmpeg -i 元ファイル 変換後ファイルとする．
+	(url : https://kimizuka.hatenablog.com/entry/2018/11/21/092511 )
+
+	* mac: ffmpegで字幕の埋め込みもできる．
+	ここで大切なのは，字幕にはmp4自体に焼付ける方法と，あくまでmp4とは別で管理する方法の２つがある．
+	動画配信でよく見るのは後者で，この方法なら字幕off，複数言語の字幕など柔軟に扱える．
+	youtube-dlで扱えるのはおそらく前者の方法で，さらに今のところ最高画質+音質でDLしようとすると失敗する．
+	そこで，youtube-dlで最高画質+音質でDLして，その後にffmpegで字幕を追加するという使い方がよい．
+	(url : https://dev.classmethod.jp/articles/add-audio-and-subtitle-to-video-with-ffmpeg/ )
+	(url : https://ja.coder.work/so/ffmpeg/35484 )
+	(url : https://nanairo.jyn.jp/phantom/2018/07-09 )
+	このときの字幕の追加方法はオプションの指定が結構面倒くさいのでサンプルファイルを作っておいた．
+	
+
+	
+
+
+2020-06-14 (Sun)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* LT10: キングジムのプログラムアラームLT10が届いた．黒地に白のデジタル表記がとても見やすくてよい．
+	アラームも細かく設定できるので，9000円の価値はあるだろう．また，アプリで24時間表記の設定ができる．
+
+2020-06-09 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: org-modeでソースコードをはりつけるには，<s，引用は<q，例は<eでよい．
+	(url: http://www.mhatta.org/wp/2018/08/23/org-mode-101-3/ )
+
+2020-06-08 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: elscreenで現在のTABを削除するには\C-z \C-k（多分kill）でよい．
+
+	* tex: TeXで化学式を角には，mhchemパッケージを使い，\ceコマンドをつかう．
+	(url: https://doratex.hatenablog.jp/entry/20131203/1386068127 )
+
+	* music: appleのmusicアプリのアートワークは音楽ファイルに自動で埋め込まれるようなので，ダウンロードフォルダに入れているファイルは消しちゃってよい．
+
+2020-06-02 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: 
+
+	* emacs: 
+
+	* emacs: 
+
+2020-06-01 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: 
+
+	* emacs: 
+
+	* emacs: neotreeについて
+	n next line ， p previous line。
+        SPC or RET or TAB Open current item if it is a file. Fold/Unfold current item if it is a directory.
+        U Go up a directory
+        g Refresh
+        A Maximize/Minimize the NeoTree Window
+        H Toggle display hidden files
+        C-c C-n Create a file or create a directory if filename ends with a ‘/’
+        C-c C-d Delete a file or a directory.
+        C-c C-r Rename a file or a directory.
+        C-c C-c Change the root directory.（rootとはyellowで表示されているやつ）
+        C-c C-p Copy a file or a directory.
+	(url: https://www.emacswiki.org/emacs/NeoTree )
+
+
+2020-05-31 (Sun)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: 
+
+	* emacs: 
+
+	* emacs: 
+
+	* emacs: texでページ番号を消す方法．\pagestyle{empty}
+	(url: http://www.latex-cmd.com/struct/pagestyle.html )
+
+	* emacs: 同じくpython+flycheckについて．現在flake8というチェッカーを使っているのだが，
+	これはPEP8というpythonのコーディング規約に則っており，これを守らないとエラー連発となる．
+	- =の左右は1space
+	- ,のあとは1space
+	- ()のなかは1space
+	- コメントアウトは#+1spaceではじめる．
+	- インデントがないトップレベルは，必ず2行開ける．
+        (url: https://note.nkmk.me/python-comment/ )
+	(url: https://qiita.com/simonritchie/items/bb06a7521ae6560738a7 )
+	
+	
+	* emacs: python+flycheckを使うには，下に従う．
+	(url: https://qiita.com/tnoda_/items/1edcdf83c8824f13c5be )
+	
+
+	* emacs: org-modeでタイムスタンプを押す時に，\C-c .だと日時だけだけど，
+	\C-u \C-c . とすると時間も入れてくれる．
+
+2020-05-30 (Sat)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: 
+
+	* emacs: emacsの一括置換について．replaceの場面でspaceでひとつ置換，nでスキップ，!で一括置換．
+	(url: https://kimagureneet.hatenablog.com/entry/2016/06/30/201033 )
+
+	* program: 前もだけど，プログラミングをするときは，まずはじめに単位の確認をしたほうがよい．
+	ここらへんのtipsをpagesでまとめたので，次から目を通すように
+
+	* emacs: 空白行を一括で削除するには，
+	M-x flush-lines
+	として，正規表現^$を書いてenterする．
+	(url: http://masahi6.txt-nifty.com/masahilog/2004/10/emacs_1.html )
+
+	* emacs: 
+
+2020-05-28 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* python: 
+
+	* emacs: 二つのファイルを行単位で結合したいときはpasteコマンドを使う．
+	(url: https://www.atmarkit.co.jp/flinux/rensai/linuxtips/347joinfilebyline.html )
+
+2020-05-27 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: awkを使って，「特定の文字を含む行」を抽出したい場合．
+	awk '/文字列/' hoge.txt >output.txt
+	とすればよい．
+	(url: http://a4dosanddos.hatenablog.com/entry/2014/07/12/142812 )
+
+	* emacs: org-modeで数式をインライン表示するにはGUIを使って，\C-\x-\lをつかう．
+	(url: https://tamura70.hatenadiary.org/entry/20100224/org )
+
+	* terminal: homebrewを入れて，libsixelをダウンロードした．
+	(url: http://blog.calcurio.com/sixel.html )
+	itermのimgcatとは別に，img2sixelコマンドでも画像を表示することができる．
+
+	* mac: safariでフォントサイズを変更するには
+	option + command + プラス記号 (+)
+	とする．
+	(url: https://support.apple.com/ja-jp/HT207209 )
+
+2020-05-26 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+ 	* emacs: emacsのテキストデータで，置換に改行を使いたい時は，例えばABをA（改行）Bとしたければ
+	A
+　　　　Ctrl - q
+　　　　Ctrl - j
+	　　　　B
+	と打つ．
+
+	* mac: pdfなどの画像をtextに変換したい場合，一つの方法はgoogle driveに書類を挙げて，そこからgoogle documentで開く．とする．この方法でアルクのLevel6以下をgetすることに成功した．
+
+2020-05-23 (Sat)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* excel: excel vbaで乱数を作る方法はこれ．
+	(url: https://uxmilk.jp/48336 )
+
+2020-05-22 (Fri)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: magitについてお勉強．
+	M-g：magit起動
+	ファイルに合わせてs：staging
+	c：commitコメントを書く
+	C-c C-c：commit
+
+	* mac: macの拡張属性についてのメモ
+	(url: http://kazutomi.blogspot.com/2013/12/comapplequarantine.html )
+	(url: https://apple.stackovernet.com/ja/q/74436 )
+
+2020-05-21 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: emacsの段落indentをなくすには，その段落の冒頭で\noindentとうつ．
+	(url: https://medemanabu.net/latex/noindent/ )
+
+	* mac: zoomを録音するには，macの環境設定，画面キャプチャのオプションの他に，Zoom自体の環境設定から音のoutputをsoundflowerに変更する必要がある．
+
+	* emacs: emacsの行間隔を設定するには，setspaceパッケージに含まれるspacing環境を使うとよい．
+
+	* emacs: emacsの余白を設定するには，geometryパッケージを使う．
+	(url: https://qdaibungei.github.io/latex/documents/2016-05-29-yohaku-settei/ )
+
+	
+2020-05-19 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mac: この問題を解決するためDPA downボタンにこのショトカを設定しておいた．
+	* mac: 辞書との連携について，一番原始的なやり方は単語の上にカーソルをおいて「command+ctrl+d」．
+	(url: http://inforati.jp/apple/mac-tips-techniques/application-hints/how-to-search-mac-dictionary-app-with-mouse-cursor.html )
+
+	* music: walkmanのw.ミュージックでは，アーティスト名をもとにリスト化している．これはitunesではアルバムアーティストをもとにリスト化しているのとはことなっていて，少々扱いが面倒くさいことになる．基本的にartist名はconductor+orchestraで指定しているので，w.ミュージックではこれがすこし煩雑に見えてしまう．
+	→この問題は解決した．右上の設定から，アルバムアーティストでソートできる．
+
+	* music: itunesでコンピレーションになっているのは，使用をやめるべき．itunes上では問題ないように見えるが，実際のファイル構造がcompilationにまとめられてしまうのが不便．
+
+	* music: アートワークを探すときは，HMVオンラインで探すと画質のよいものを入手できる．
+	(url: https://www.hmv.co.jp )
+
+2020-05-18 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* music: itunesでの音源管理について．指針を考えた．まず，アーティストは指揮者ごとに分類しておく．そうして，アルバム名を
+	「(作曲者+曲名) (アーティスト名前):[ | (作曲者名前2): (アーティスト名前2): 、以下繰り返し]」
+	としておく．こうするとアルバムでは作曲者ごとに検索することができる．
+
+
+	
+	* mac: メニューバーを活用していきたい企画第一弾．天気を表示させたい．これにはwhetherBugを使った．
+	(url: https://book.mynavi.jp/macfan/detail_summary/id=51958 )
+
+	* mac: メニューバーを活用していきたい企画第二弾．calenderを表示させたい．これにはitsycalを使った．
+	(url: https://www.softantenna.com/wp/review/itsycal/ )[2020-05-18]
+
+	* emacs: mewでmodelineに通知を出すことができる．変数 mew-use-biffを使う．
+	(url: https://tam5917.hatenablog.com/entry/2013/10/21/235955 )
+	これを使うためには，mewを起動していないといけないので，できればemacsの起動時にmewも一緒に起動する習慣をつけたい．
+
+	* word: 学振で使ったwordのテクニック，行間を開ける，左右幅の調整にはメニューバーのフォーマット→段落からやればよい．これで固定値でptをしていするか（今回は文字10.5ptに対して行間14pt），倍数で指定するかの方法がある．基準として，
+	「行間は文字サイズの50%〜75%がよい，つまり行送りは文字サイズの1.5倍~1.75倍」
+	らしい．これをつかうと10.5ptにたいして行間は5.25~7.875ptとなる．
+	(url: https://allabout.co.jp/gm/gc/390626/2/ )
+
+	
+	* excel: セルの再編集は，F2で行ける．
+	(url: https://www.moug.net/tech/exopr/0020011.html )
+
+2020-05-17 (Sun)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: さらにMewについて．「アプリパスワード」は覚えるのはちょい厳しいので，mew側で保存してほしい．そのための仕組みがマスターパスワード，（0.511MeVにした）これによってmailのパスワードの代わりにマスターパスワードを入力するだけですむ．
+	(url: https://at-aka.blogspot.com/2006/05/mew-5052.html )
+	macportsからgnupg2をインストールしておく必要がある．
+
+	* emacs: 基本的なメールの仕組みについて．メールを送信する際にはSMTPサーバというものを使う．POP/IMAPサーバはメール受信の際に必要なもの．POPはメールサーバに保存されたメールを受信者のPCにダウンロードする役割．IMAPではメールサーバにメールをほぞんしたまま（ローカルにはdlせずに）メールを読むことができる．
+	(url: https://www.kagoya.jp/howto/rentalserver/smtpserver/ )
+
+	* emacs: さらにMewについて，googleで二段階認証を有効にして用いる場合，「アプリパスワード」をgmail側で作成し，mew側のSTMPのパスワードは普通のpassではなくこの「アプリパスワード」を入力する必要がある．
+
+	* emacs: Mewでgmailを使う場合，gmailの設定から安全性の低いアプリのアクセスを許可しないといけない．
+	(url: https://www.hc.itc.keio.ac.jp/ja/com_mail_mew_keiojp.html )
+	一般的な設定についてはここ参照
+	(url: http://www.ritsumei.ac.jp/~kht23151/joho/mail.html )
+	mewの終了にはq，メールを作成するにはw.
+	
+
+	* excel: excelの数式バーで文字化けする時は，excelの環境設定→全般から，既定フォントを指定する．
+	(url: https://blog.goo.ne.jp/m4g/e/301af08b6fa8cad7ac18e1c7787a80e2 )
+
+2020-05-16 (Sat)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* 
+
+	* emacs: org-modeの時間の集計は「\C-c \C-x \C-d」とすれば合計の時間が表示される．
+
+
+2020-05-15 (Fri)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* terminal: macportを軽くするためにinactiveなのをuninstallするとよい．
+	sudo port uninstall inactive
+
+	* LaTeXit:これは重要．latexitを使ってPDFを作る際，そのままペーストするとどうもPDF with font included という状態になるようで，これだとabodeなどでPDFのレイアウトが崩れて見えてしまうことがある．したがって，多少面倒だが右クリックコピー→PDF without font の形式でコピー してからはりつけるとうまくいく．
+
+	* terminal: wineはcatalina上で使えなくなってるらしい．source codeからinstallすることで問題を一時的に回避した．
+	(url: https://qiita.com/geek_777/items/226c5551bffbbd451f71 )
+	(url: https://officeforest.org/wp/2019/03/16/macosはwineを活用するともっと便利になる/ )
+
+2020-05-14 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* english: DFシリーズで履歴をみたい時は，辞書画面にして，下をswipeして補助メニューを出す．
+
+2020-05-11 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: 
+
+	* emacs: requireからuse-packageへの移行については，
+	　とりあえず今の設定をそのまま移行したい場合、
+	(require \`yatex) を (use-package yatex と書き直す（クォートが取れることに注意）
+	以降の設定を :config 以下に移動する
+	最後の括弧 ) で閉じる
+	だって．
+	(url: https://kumaroot.readthedocs.io/ja/latest/emacs-use-package.html )
+	(url: https://www-he.scphys.kyoto-u.ac.jp/member/shotakaha/dokuwiki/doku.php?id=toolbox:emacs:use-package:start )
+
+
+	* iterm: iterm2ではasciiと非asciiにそれぞれフォントを指定できるが，日本語が非asciiとして認識されていることがわかった．
+
+	* mac: 
+
+	* mac: ANKIの使い方については，以下参照
+	(url: https://rs.luminousspice.com/how-to-anki/ )
+	もしかしたら作ったexcelデータを使って一括でファイル読み込みできるかも．
+	ネットには既に作られた辞書がたくさんあるので，試しにそれから初めて見るのがよい．
+	(url: https://ankiweb.net/shared/decks/english )
+
+	* emacs: org-bulletsの改造について．
+	(url: http://hico-horiuchi.hateblo.jp/entry/20140918/1411046658)
+
+2020-05-09 (Sat)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: emacsから簡単にシェルコマンドを撃ちたい場合はM-!で良い．（M-x shell）と使い分ける．
+
+	* emacs: mobileorgとの連携．先にdropboxの設定を英語にしないと，フォルダ名が日本語になってしまうので注意．
+
+	* terminal: ターミナルからfinderを開くには open . で良い．
+
+	* mac: dropboxとgoogledriveのローカルファイルを~/Documents/cloudsに移動．Dropboxは，基本設定から変更できる．
+
+2020-05-08 (Fri)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: さらにorgについて．iOSで使えるmobile orgなるアプリを発見
+	(url: https://doyakin.com/emacs/win-mobile-org-設定メモ/ )
+
+	* emacs: やはりorg-modeとhowmの連携は一筋縄ではいかないようで，一旦停止することに．
+	というかhowmを使いこなすのが難しい．．．タグの機能はorgよりも便利そうなのでしばらくは
+	- 知識の蓄積：change logとhowm
+	- タスク管理；org
+	という感じで使い分けるのが良さそう．
+
+
+	* emacs: emacsで一つ前のbufferに戻るには，
+	\C-x b　　 ：デフォルトで一つ前に戻ってくれる．
+	\C-x \C-b　：現在開いているファイルの一覧が出てくれる．
+	とすればよい．
+	(url: http://e-sahf.jp/class/13/emacs.htm )
+
+	* mac: macの日本語の予測変換が使えないという意見はどうも巷でもよくあるようで，これを使いやすくする方法を見つけた．
+	(url: http://seihoukei.com/post-6800-mac-word-info/ )
+	新しくgoogle日本語入力というのをインストールして，macの標準日本語入力と置き換えるというもの．いくつか問題点と，その解決．
+	- 見た目が良くない．→これは今のところ改善の見込みなし．
+	- 句読点の変更→これはメニューバーのgoogle日本語入力→環境設定から変更することができる．
+	(url: https://ssaito.wordpress.com/2011/05/17/google日本語入力の標準句読点を変更する/)
+	- かなキーへの対応は？→メニューバーから選択すれば勝手に対応してくれる．
+
+	* mac: もうひとつの方法として、デフォルトのライブ変換を無効にするやり方もある。
+	(url: https://kouichirou.aomori.jp/2016/08/09/mac-livechange/ )
+	以上のようなやり方で，一応二つの方法がある．気分によって使い分けてみよう．
+
+	
+	* emacs: org-modeで付けられるカテゴリーが，そのままorg-agendaに表示されるので，わかりやすいのを付けておくと良い．
+
+	* emacs: org-modeのリストのチェックについて．これは，[/]と書いて，さらに\C-c \C-cと打つ必要がある．
+
+	* emacs: 
+
+2020-05-07 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* VPN: imac_newでsafariをVPNで繋げない問題が解決した．VPNとwifiの優先順位を変更してあげる必要があったよう．
+	つまり，safariではVPNではなくwifi優先で繋がってたみたい．ネットワーク→歯車マークから順番を変更すればok
+	(url: https://support.apple.com/ja-jp/guide/mac-help/mchlp2711/mac )
+
+	* walkman: youtubeのバックグラウンド再生には，chromeからブラウザ版youtubeを立ち上げる必要あり．
+
+2020-05-06 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* excel: セルを非表示するときは，代わりにグループ化というのを使うと良い．データタブ→グループ化と選択．
+
+2020-05-05 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* 
+
+2020-05-04 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* terminal: mkdirでさらに深いところのdirを作りたいとき，例えば/A/B/Cを作りたいがBがない時，-pオプションを使う．
+
+	* g604: bootcampでwindowsを使った後にmacosを再起動すると，G HUBが起動できなくなる．この問題はPCを再起動すれば解消するようだ．
+
+2020-05-03 (Sun)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* hhkb: windowsでのHHKBの使い方も徐々に勉強していこう．英数の切り替えはchaps lockでできる．一応IMEの設定をいじればもっと細かく設定できるが，とりあえずHHKBのデフォルトを使うのが良いだろう．
+	(url: https://faq.pfu.jp/faq/show/2610?category_id=143&site_domain=hhkb )
+
+2020-05-01 (Fri)  天野智仁  <amanotomohito@shoukaku.local>
+
+	
+	* emacs:  org-modeではコマンド\C .で日にちを挿入することができる．
+	(url: https://konbu13.hatenablog.com/entry/2014/01/28/211956 )
+
+2020-04-30 (Thu)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* 
+
+	* emacs: change-logを終了する方法についてだが，コマンド\c\qを打てば良い．（\c qではないので注意）
+
+	* app:  キャプチャのために，soundflowerを入れた．dmgファイルがgithubに置いてある．
+	(url: https://github.com/mattingalls/Soundflower/releases )
+	これで，画面収録する前に，システム環境設定→サウンド→出力→soundflower と選択し直す必要がある．参考文献を置いておく
+	(url: https://bamka.info/mac-sound-captcha )
+
+
+	
+2020-04-25 (Sat)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* other: みずほマイレージの特典が変更されたようで，コンビニATMの手数料無料がなくなっていた．手数料は時間に応じて23220円または110円取られるので極力使わないで面倒臭くてもみずほのATMまで行ったほうが良い．
+
+2020-04-22 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* mause: logicool G604が届く．で，G-HUBを設定．元々マウスボタン4，5が割り当てられていたところに，safaではページを戻る，ページを進む，を割り当てた
+
+2020-04-19 (Sun)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* 
+
+	* youtube: youtube-dlで字幕付きのダウンロードの仕方．
+	(url:  https://scrapbox.io/mactkg-pub/youtube-dlで字幕付きの動画をダウンロードする )
+	(url: https://masayoshi-9a7ee.hatenablog.com/entry/20150905/1441414821 )
+	--embed-subs --sub-lang ja --write-sub
+	というオプション．はじめのが字幕を読み込むことを指定．次のlangで言語を指定できる．ただ指定できる言語がぱっと見だとわからないと思うので， そこについては
+	youtube-dl -f mp4 --all-subs
+と実行すると，使用できるlangの一覧がダウンロードされるので，それを見て利用するようにしよう．
+	
+2020-04-15 (Wed)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: \C-c \C-bで，bufferを選択できるので，これを利用して一つ前のファイルに戻ったりすることができる．
+
+2020-04-14 (Tue)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* shell:zshの設定について．
+	(url: https://qiita.com/ktr_type23/items/3eb782f98c7a5f4c60b0 )
+	を参照すること．特にctrl+rでコマンド履歴の検索ができるのは覚えておこう．
+
+2020-04-13 (Mon)  天野智仁  <amanotomohito@shoukaku.local>
+
+	* emacs: (url: test)また，
+
+	* emacs: test2
+
+2020-04-13  天野智仁  <amanotomohito@shoukaku.local>
+
+	* ../.emacs.d/init.el (clmemo): clmemo test．change-logメジャーモード用のマイナーモードとして，clmemoを入れた．
+
+	* emacs: まず，このようにtitleを入れることができる．（titleの補完をカスタマイズできる．）
+	* emacs:[2020-04-10]他にも，このようにハイパーリンクを貼ることができる．
+	(url: https://gan2-2.hatenadiary.org/entry/20071226/1198645571 )
+	こうすると，\C-RETでsafariや当該の日にちに飛ぶことができる．ただし，:や)のところにspaceが必要．
+
+	* emacs:引用はこのようにやる．
+	>>
+	これが引用文．これが引用文
+	<<
+
+	*
+
+	* ../programs/reports/merit_hukan/20200409.tex: yatexについてだが，どうもカスタマイズすると，newer than byte-compiled fileというエラーが出てしまう．一応M-x byte-compile-filesと言うコマンドはあるものの，これでは解決しなかったので，elpaからではなく，公式からダウンロードすることに．こうするとエラーが出なくなった．
+	http://yohshiy.blog.fc2.com/blog-entry-22.html
+	
+
+2020-04-12  天野智仁  <amanotomohito@shoukaku.local>
+
+	*  macの予測変換について．今まで矢印で選択してきた（特に上むき）が，どうもその必要がなかったことが判明した．実はemacs likeなショートカットが割り当てら話れていて，\C-nで下へ，\C-pで上へ移動することができる．これは便利なので覚えておこう．
+
+	*  walkmanに動画を転送する方法だが，これはmoviesフォルダに入れないといけない．外付けSDの場合は初めはMoviesフォルダがないので，これを作った上で転送すること．
+
+2020-04-10  天野智仁  <amanotomohito@shoukaku.local>
+
+	* ../.emacs.d/init.el ("\C-cd"): emacsをさらにカスタマイズしている．
+
+2020-04-08  天野智仁  <amanotomohito@shoukaku.local>
+
+	* ../.emacs.d/init.el (memo): memoファイル（これはシステム上はemacsのlogファイル）の消し方，と言うかより一般に現在のbufferの消し方は
+	　　　\C-x k
+	 である．http://emacs.clickyourstyle.com/articles/256
+	(memo, c-mode-common-hook): 
+
+	*  osxのショトカについて．例のアプリケーション切り替えソフトはアプリケーションスイッチャーと言う名前がついていた．
+	command+tabを一瞬だけ押すことで，直前のアプリに移動することが可能
+
+2020-04-07  天野智仁  <amanotomohito@shoukaku.local>
+
+	* ../.emacs.d/init.el: 
+
+	* ../.emacs.d/elpa/doom-modeline-2.9.2/doom-modeline-segments.el (doom-modeline--flycheck-icon): もう一つのやり方として，https://qiita.com/uKLEina/items/299fbeef298cb2265fbfを参考に，doom-modelineの方を改造するやり方がありそう．こちらの方がやや簡単だろう．これに関連して
+	https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf
+	も参考になると思う．
+
+	* ../.emacs.d/init.el: 
+
+	*  emacsのmodelineのカスタマイズについて．現状，powerlineを若干変更することには成功した．しかし，どうもdoom-modeline程の拡張性がない．（例えばGitの状況に応じて色を変えたり，flycheckの表示をわかりやすくしたり）将来的にはpowerline自体を自分で弄るか，同等の物を自分で作る必要がありそう．それに当たって使えそうなURLをいくつか揚げておく．
+	https://tsuu32.hatenablog.com/entry/2019/08/04/160316
+	https://github.com/seagle0128/doom-modeline
+	http://syohex.hatenablog.com/entry/20130131/1359646452
+	http://hico-horiuchi.hateblo.jp/entry/20130510/1368201907
+	http://amitp.blogspot.com/2011/08/emacs-custom-mode-line.html
+	https://blog.shibayu36.org/entry/2014/04/01/094543
+	https://qiita.com/uKLEina/items/299fbeef298cb2265fbf  
+	https://qiita.com/blue0513/items/99476f4ae51f17600636
+
+2020-04-06  天野智仁  <amanotomohito@shoukaku.local>
+
+	* ../programs/work/work2/document/extendedLF/extendedLF.tex: 今まで何度か苦しめられてきたemacsでのctrl+Wは，kill-regionなのだが，これはマークしていないと意味がない．しかし，そのマークを行うコマンドがどうもあるらしい．
+
+	*  また，遡って貼り付けを行う場合は\C-yの後にESC-yを押せば良い．まあ，今のemacsにはundo-histが入っているので，大体の場合は\C-uで対処できると思うが．
+
+
+	*  emacsのマルチウィンドウについて，windowを消すには\C-x 0 で良い．他にも思ったより色々なコマンドがあったのでよう勉強
+	　　https://web.sfc.wide.ad.jp/~sagawa/gnujdoc/emacs-20.6/emacs-ja_17.html
+	
+	
+
+2020-04-05  天野智仁  <amanotomohito@shoukaku.local>
+
+	*  HHKBをいじっていて，今まで知らなかったショトカ（多分OSX共通）を発見した．ctrl+spaceで入力言語を入れ替えられる．
+	   日英はボタン一つなのでよいのだが，ハングル入力には今まで面倒臭いことをやっていたので，これは大きい．
+
+2020-04-03  天野智仁  <amanotomohito@shoukaku.local>
+
+	*  NHKラジオをダウンロードするアプリとして，ラジリンガルをダウンロード
+	　　https://www.radilingual.com/how-to-install-radilingual/#mac-method
+	  暫定的に，~/Documents/以下にファイルを置くことにした．  
+
+	*  macportsからyoutube-dlをダウンロード．imac-oldには書いたのだが，プレイリストを一括でダウンロードするコマンドは
+	youtube-dl -x --audio-format m4a URL
+	である．ちなみに，フォーマットの指定は-fオプションで，たとえばmp4なら
+	youtube-dl -f mp4 URL
+	でよろしい．
+	http://ina6ra.blogspot.com/2016/11/youtube-dl-mp4-mp3.html
+	
+	
+
+s2020-04-01  天野智仁  <amanotomohito@shoukaku.local>
+
+	* ../.emacs.d/init.el: skimをダウンロード．sourceforgeからだったのだが，きっとこれも自動化する方法があるはず．
+
+2020-03-28  天野智仁  <amanotomohito@shoukaku.local>
+
+	*  gnu ls 用のdircolorsファイルを弄った．というのも，今まではデフォルト設定でblight bold の色を使いにくかったのだが，ここをうまく調整することでblight boldのままで（つまり使う数の色を8 to 16にして）表示するようにした．主な変更点は以下
+	　　　NOMAL FILE 37 (white)
+	      files which can be edited by usual editers 36 (cyan)
+	      .TeX       36(cyan)
+	今まで，cyanとwhiteが効果的に使われていなかったのを改善した．これで大分見やすくなった．
+	
+
+	*  macTex2019のインストール．相変わらずpkgから持ってきている．これをなんとかバイナリから入れられるようにしないとな，とは思っている．（というかじゃなかったらdotfiles化もできないし） ただし，mactex自体には利点があって，それはインストール場所が
+	　　　　
+	であるということ．これならmactexのバージョンが変わっても，適当にpassを貼り直すだけで支障なく乗り換えることができる．
+
+	*  macで画面収録するのはcommand+shift+5．なのだが，どうもhuluはこれに対するprotectionがかかっていて，ダウンロードできないように
+	なっている．
+	https://support.apple.com/ja-jp/HT208721
+
+	*  HHKBでは，Fnキーと他の特定のキーを押すことで，様々なショトカがデフォルトで入っている．まず，音量関係は
+	　　　Fn+a：：volume down
+              Fn+b：：volume up	
+	      Fn+c：：volume mute
+	次いで，画面の明るさは
+	　　　Fn+o：：画面を暗く
+	      Fn+p；；画面を明るく
+	他に，USキーボードと同様，矢印キーが割り当てられている部分もある．
+　　　　
+	
+2020-03-27  天野智仁  <amanotomohito@shoukaku.local>
+
+	*  初めまして．imac-new(shokaku)の方にも日記を作りましたので，環境構築等について語っていきたいと思います．	
+
+	*まず，今までに入れたものについて．
+	xcode，command line tool，macportsまではいつも通り
+	anaconda3，xQuartz，iterm2 はpkgファイル形式でインストール
+	あとは基本的にmacports経由で入れているはず．
+
+
+	*  設定ファイルについては，.emacs.d及び.zshrcなどのファイル．このうちシェルの設定ファイルはdotfilesで管理する形を撮っている．
+
+	*  最近の研究によってiterm2を用いるようになった．このiterm2については，テーマの設定と（プロンプト の表示に用いる ）フォントのインストールを行っていて，これらもdotfilesで管理している．定期的にiterm2のプロファイルをexportして保存しておくことを推奨する．（微妙に細かい設定をしていて，これら全てを覚えることは不可能と思う）
+	
+

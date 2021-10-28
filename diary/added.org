@@ -1,0 +1,2 @@
+* テスト
+ org-mobile-directory周りの設定をしてみたので，実際pushされるかの確認
