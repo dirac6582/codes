@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+#こっちはsetupと違って，gitで更新したときに使う
+
+######
+##symbolic linksを作る．
+##2020/3/18
+##https://qiita.com/massy22/items/5bdb97f8d6e93517f916
+######
+
+DOT_FILES=(.bashrc .bash_profile .zshrc .zshenv .zprofile)
+ 
+for file in ${DOT_FILES[@]}
+do
+    ln -s $HOME/dotfiles/$file $HOME/$file
+done
+
+
+
+
+
+#Nerdfontのインストール
+#https://vwrs.github.io/font/2018/09/26/nerd-fonts/
+nerd_fonts() {
+  git clone --branch=master --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+  cd nerd-fonts
+  ./install.sh $1  # "Source" to install Sauce Code Nerd Font
+  cd ..
+  rm -rf nerd-fonts
+}
