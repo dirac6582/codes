@@ -48,7 +48,9 @@ fpath+=$HOME/.zsh/pure
 #dircolors-solarizedを使うため，対応するファイルを読み込む．
 
 #対応するファイルの場所
-dircolorsPATH=~/dotfiles/iterm2setting/dircolors-solarized/dircolors.ansi-modify-dark
+# 2021/10/30 mv dotfiles to works/codes
+dircolorsPATH=/Users/amanotomohito/works/codes/dotfiles/iterm2setting/dircolors-solarized/dircolors.ansi-modify-dark
+#dircolorsPATH=~/dotfiles/iterm2setting/dircolors-solarized/dircolors.ansi-modify-dark
 #dircolorsPATH=~/dotfiles/iterm2setting/dircolors-solarized/dircolors.256dark
 #以下で読み込み
 if [ -f  ${dircolorsPATH} ];then
@@ -57,6 +59,8 @@ if [ -f  ${dircolorsPATH} ];then
     elif type gdircolors >/dev/null 2>&1;then
 	eval $(gdircolors ${dircolorsPATH} ) 
     fi
+else
+    echo error DO NOT exist ${dircolorsPATH}
 fi
 
 
@@ -364,11 +368,15 @@ function estart() {
 }
 estart # シェル起動時にEmacsデーモンも起動する
 
-#alias ekill="emacsclient -e '(kill-emacs)'"
+# emacsclient用の追加の設定
+# https://www.emacswiki.org/emacs/EmacsClient#h5o-1
+
+alias ekill="emacsclient -e '(kill-emacs)'"
 #alias erestart="ekill && estart"
 #alias e="emacsclient -nw -a ''"
 #alias emacs="emacsclient -nw -a ''"
-#export EDITOR="emacsclient -nw -a ''"
+export EDITOR="TERM=TERM=xterm-24bit emacsclient -a ''"
+export ALTERNATE_EDITOR=""
 
 
 # z
