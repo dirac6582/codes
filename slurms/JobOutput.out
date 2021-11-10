@@ -1,0 +1,40 @@
+Loading compiler version 2021.1.1
+Removing tbb version 2021.1.1
+Loading tbb version 2021.1.1
+Loading debugger version 10.0.0
+Removing compiler-rt version 2021.1.1
+Loading compiler-rt version 2021.1.1
+Loading dpl version 2021.1.1
+Lmod has detected the following error: You can only have one compiler module
+loaded at a time.
+You already have intel loaded.
+To correct the situation, please execute the following command:
+
+  $ module swap intel oneapi/compiler/2021.1.1
+
+
+While processing the following module(s):
+    Module fullname           Module Filename
+    ---------------           ---------------
+    oneapi/compiler/2021.1.1  /opt/ohpc/pub/modulefiles/oneapi/compiler/2021.1.1
+
+Removing mkl version 2021.1.1
+Removing compiler-rt version 2021.1.1
+Removing tbb version 2021.1.1
+Loading mkl version 2021.1.1
+Loading compiler-rt version 2021.1.1
+Loading tbb version 2021.1.1
+Removing mpi version 2021.1.1
+Loading mpi version 2021.1.1
+
+START DATE : Wed Sep 29 18:11:20 JST 2021
+SLURM_JOBID : 108405
+SLURM_SUBMIT_DIR : /home/amano/sample/slurms
+SLURM_CPUS_PER_TASK :
+SLURM_NTASKS : 16
+hostname : orc71.compute.arda
+
+mpi test done
+mpi test done 2 
+tar end
+test
