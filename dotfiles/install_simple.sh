@@ -11,9 +11,14 @@ cd $BASEDIR
 # dotfilesディレクトリにある、ドットから始まり2文字以上の名前のファイルに対して
 for f in .??*; do
     [ "$f" = ".git" ] && continue
+    [ "$f" = ".gitignore" ] && continue
     [ "$f" = ".gitconfig.local.template" ] && continue
     [ "$f" = ".gitmodules" ] && continue
-
+    
     # シンボリックリンクを貼る
     ln -snfv ${PWD}/"$f" ~/
 done
+
+# init.elのリンクをはる．
+ln -snfv ${PWD}/init.el ~/.emacs.d/init.el
+
