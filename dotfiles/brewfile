@@ -6,7 +6,6 @@
 
 # apps
 brew "mas"
-brew "anaconda3"
 brew "emacs"
 brew "gnuplot"
 
@@ -15,11 +14,13 @@ brew "gnuplot"
 brew "inetutils"
 brew "imagemagick"
 brew "sqlite"
-
+brew "hub"     #githubの上級コマンド
 
 # gnu command replace
 # https://qiita.com/eumesy/items/3bb39fc783c8d4863c5f
-brew "coreutils --default-names"
+# https://yu8mada.com/2018/07/25/install-gnu-commands-on-macos-with-homebrew/
+#brew "coreutils --default-names"
+brew "coreutils"
 brew "diffutils"
 brew "findutils"
 brew "ed"
@@ -28,14 +29,17 @@ brew "gsed"
 brew "gnu-tar"
 brew "grep"
 brew "gzip"
-
+brew "gnutls"
+brew "wdiff"
+brew "wget"
+brew "gnu-which"
 
 
 # cask
-cask "zoom"
+cask "anaconda"
 cask "google-chrome"
 cask "iterm2"
-cask "alfread"
+cask "alfred"
 cask "notion"
 cask "keepassXC"
 cask "things"
@@ -48,8 +52,11 @@ cask "alfred"
 cask "deepl"
 cask "dropbox"
 cask "grammarly"
+cask "google-drive" #passwordが必須
+cask "zoom"  #passwordを要求された．どうも自動で起動したっぽくて，今後改善が必要．
 
 
-
+# appstore
+mas "Things 3", id: 904280696
 
 

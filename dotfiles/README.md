@@ -7,6 +7,15 @@
 # 
 
 
+## 実際の設定
+1, 事前準備
+install xcode command line tools.
+install xquartz
+
+ssh connection to github
+
+clone "codes" repository in ${HOME}/works
+
 
 ## contents
 

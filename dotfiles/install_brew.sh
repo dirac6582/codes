@@ -6,6 +6,12 @@ which brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubu
 echo "run brew doctor..."
 which brew >/dev/null 2>&1 && brew doctor
 
+
+
+# doctorの後にこれをやらないとupdate以降がうまく行かない．(MBP 2021 homeの設定で分かった．)
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
 echo "run brew update..."
 which brew >/dev/null 2>&1 && brew update
 

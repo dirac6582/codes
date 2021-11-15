@@ -44,3 +44,9 @@ export LIBRARY_PATH=$LIBRARY_PATH:/Users/AMANOTOMOHITO/src/Eigen
 #2021/10/28
 # 自作codeへのpathを通す．
 export PATH="/Users/amanotomohito/works/codes:$PATH"
+
+
+
+#2021/11/15 for homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
