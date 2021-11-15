@@ -270,6 +270,9 @@ alias lsl='/opt/local/bin/gls -l --color=auto'
 alias awk='/opt/local/bin/gawk'
 
 
+##2021/11/14 sed to gsed
+alias sed='/opt/local/bin/gsed'
+
 #2020/2/23 emacs
 
 #####以下の問題はmacのデフォルトターミナルでの問題．解決するまでは使わない
