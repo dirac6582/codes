@@ -1,10 +1,51 @@
+#########################################
+#
+# dot files
+#
+#########################################
+
+# 
+
+
+
+## contents
+
+1, shell setting
+- .zshrc
+- .zshenv
+- .zprofile
+
+
+2, git setting
+- .gitconfig
+
+
+
+3, auto installation for Homebrew
 
 
 
 
+4, GUI apps installation
+
+
+- notion
+- keepassXC
+- things
+- VS code
+- iterm
+- zotero
+- slack
+- skim
 
 
 
+5, setting not included
+
+Due to security issue
+- keepassXC key files
+- ssh
+- 
 
 
 
