@@ -49,7 +49,7 @@ fpath+=$HOME/.zsh/pure
 
 #対応するファイルの場所
 # 2021/10/30 mv dotfiles to works/codes
-dircolorsPATH=${HOME}/works/codes/dotfiles/iterm2setting/dircolors-solarized/dircolors.ansi-modify-dark
+dircolorsPATH=${HOME}/works/codes/dotfiles/iterm2setting/dircolors.ansi-modify-dark
 #dircolorsPATH=~/dotfiles/iterm2setting/dircolors-solarized/dircolors.ansi-modify-dark
 #dircolorsPATH=~/dotfiles/iterm2setting/dircolors-solarized/dircolors.256dark
 #以下で読み込み
