@@ -35,6 +35,7 @@
 
 # iterm
 !/com.googlecode.iterm2.plist
+!/Solarized-Dark.json
 !/iterm2setting/
 !/iterm2setting/dircolors.ansi-modify-dark
 
