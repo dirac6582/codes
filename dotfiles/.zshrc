@@ -261,7 +261,8 @@ RPROMPT='`rprompt-git-current-branch`'
 
 #eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/.dircolors-solarized/dircolors.ansi-dark`
 
-if [ `which gls` = "/opt/local/bin/gls" ]; then
+if [ `which gls`="/opt/local/bin/gls" ]; then
+    echo "system is macports"
     alias ls='/opt/local/bin/gls -F --color=auto'
     alias lsa='/opt/local/bin/gls -Fa --color=auto'
     alias lsl='/opt/local/bin/gls -l --color=auto'
