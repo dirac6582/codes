@@ -385,3 +385,21 @@ export ALTERNATE_EDITOR=""
 # z
 # https://github.com/rupa/z
 source ~/src/z/z.sh
+
+
+# iterm2 badge
+# https://www.rasukarusan.com/entry/2019/04/13/180443
+function badge() {
+    printf "\e]1337;SetBadgeFormat=%s\a"\
+    $(echo -n "$1" | base64)
+}
+
+function ssh_local() {
+    local ssh_config=~/.ssh/config
+    local server=$(cat $ssh_config | grep "Host " | sed "s/Host //g" | fzf)
+    if [ -z "$server" ]; then
+        return
+    fi
+    badge $server
+    ssh $server
+}

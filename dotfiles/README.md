@@ -17,6 +17,12 @@ ssh connection to github
 clone "codes" repository in ${HOME}/works
 
 
+2, まだ実装できていないもの．
+他人の作ったgit repositoryを使用しているが，それをどうするべきか？
+- ~/src/z.sh
+- 
+
+
 ## contents
 
 1, shell setting

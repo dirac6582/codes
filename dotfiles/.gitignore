@@ -30,6 +30,10 @@
 
 !/install_simple.sh
 
+
+#
+!/com.googlecode.iterm2.plist
+
 #homebrew
 !/brewfile
 !/install_brew.sh
