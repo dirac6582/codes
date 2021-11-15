@@ -261,17 +261,20 @@ RPROMPT='`rprompt-git-current-branch`'
 
 #eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/.dircolors-solarized/dircolors.ansi-dark`
 
-alias ls='/opt/local/bin/gls -F --color=auto'
-alias lsa='/opt/local/bin/gls -Fa --color=auto'
-alias lsl='/opt/local/bin/gls -l --color=auto'
+if [ `which gls` = "/opt/local/bin/gls" ]; then
+    alias ls='/opt/local/bin/gls -F --color=auto'
+    alias lsa='/opt/local/bin/gls -Fa --color=auto'
+    alias lsl='/opt/local/bin/gls -l --color=auto'
+
+    ##2020/2/23 awk to gawk
+    alias awk='/opt/local/bin/gawk'
 
 
-##2020/2/23 awk to gawk
-alias awk='/opt/local/bin/gawk'
+    ##2021/11/14 sed to gsed
+    alias sed='/opt/local/bin/gsed'
+fi
 
 
-##2021/11/14 sed to gsed
-alias sed='/opt/local/bin/gsed'
 
 
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
