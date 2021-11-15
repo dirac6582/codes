@@ -31,7 +31,10 @@
 !/install_simple.sh
 
 
-#
+# github
+!/clone.sh
+
+# iterm
 !/com.googlecode.iterm2.plist
 
 #homebrew

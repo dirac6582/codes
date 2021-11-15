@@ -21,6 +21,7 @@ brew upgrade
 
 echo "brew tap"
 # brew tap thirdparty
+# https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts 
 brew tap homebrew/cask-fonts
 
 

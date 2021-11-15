@@ -35,8 +35,13 @@ brew "wget"
 brew "gnu-which"
 
 
+# cask font
+cask "font-hack-nerd-font"
+cask "font-menlo-for-powerline"
+
+
 # cask
-cask "anaconda"
+# cask "anaconda" 現在M1macに非対応
 cask "google-chrome"
 cask "iterm2"
 cask "alfred"
