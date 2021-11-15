@@ -27,6 +27,13 @@
 !/.gitignore_global
 !/.gitconfig
 
+
+!/install_simple.sh
+
+#homebrew
+!/brewfile
+!/install_brew.sh
+
 !/README.md
 #!/LICENSE
 !.gitignore
