@@ -52,16 +52,24 @@ cask "visual-studio-code"
 cask "iterm2"
 cask "zotero"
 cask "slack"
+cask "line"
 cask "skim"
 cask "alfred"
 cask "deepl"
 cask "dropbox"
 cask "grammarly"
+cask "background-music" #現在M1macに非対応
+cask "itsycal"
 cask "google-drive" #passwordが必須
 cask "zoom"  #passwordを要求された．どうも自動で起動したっぽくて，今後改善が必要．
+
+# cask for Lab
+cask "apachedirectorystudio"
+
 
 
 # appstore
 mas "Things 3", id: 904280696
+mas "WeatherBug", id: 1059074180
 
 

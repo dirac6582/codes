@@ -8,6 +8,8 @@
 # iterm2 shell integration
 curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 
+# iterm2 additional commands 
+curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 
 
 # iterm2 setting file
