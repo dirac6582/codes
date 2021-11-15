@@ -296,7 +296,7 @@ alias ee='TERM=xterm-24bit emacsclient -t'
 
 
 #20200515 wine（temporary）
-alias wine='~/src/wine/wine64'
+# alias wine='~/src/wine/wine64'
 
 
 

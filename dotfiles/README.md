@@ -18,26 +18,81 @@
 
 2, git setting
 - .gitconfig
+  .gitignore_global
 
+
+3, emacs setting
+- init.el
+
+
+
+
+!! causion !!
+before installation,
+- xcode Tools
+- X11
+are needed.
 
 
 3, auto installation for Homebrew
 
+# apps
+- mas
+- anaconda3
+- emacs
+
+# commands
+inetutils
+imagemagick
+sqlite
+
+
+# gnu command replace
+# https://qiita.com/eumesy/items/3bb39fc783c8d4863c5f
+- coreutils --default-names (ls, mv)
+- diffutils  (diff, cmp, diff3, sdiff)
+- findutils (find, locate, updatedb, xargs)
+- ed
+- gawk
+- gsed
+- gnu-tar
+- grep
+- gzip
+
+# テキスト処理
+- ag
+- jq
+- lv
+- parallel
+- pandoc
+- sift
+- wget
+- wdiff --with-gettext
+- xmlstarlet
 
 
 
-4, GUI apps installation
+4, GUI apps installation for homebrew cask
+https://qiita.com/takeshisakuma/items/e9685fb9e394212247c0
 
-
+- alfread
 - notion
 - keepassXC
 - things
 - VS code
-- iterm
+- iterm2
 - zotero
 - slack
 - skim
+- alfred
+- deepl
+- dropbox
+- grammarly
+- zoom
+- chrome
+- 
 
+5, 
 
 
 5, setting not included
