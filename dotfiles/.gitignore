@@ -36,6 +36,7 @@
 
 # iterm
 !/com.googlecode.iterm2.plist
+!/iterm2setting/
 !/iterm2setting/dircolors.ansi-modify-dark
 
 #homebrew
