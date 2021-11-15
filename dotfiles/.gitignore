@@ -11,7 +11,6 @@
 /*
 /**
 
-# /iterm2setting/
 
 # .gitignoreは上から解釈されていくので
 # 管理対象のファイルをホワイトリストのように追記します
@@ -29,7 +28,7 @@
 
 
 !/install_simple.sh
-
+!/after_install.sh
 
 # github
 !/clone.sh
