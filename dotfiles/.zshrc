@@ -300,6 +300,31 @@ MANPATH="/opt/homebrew/opt/gnu-tar/libexec/gnuman:$MANPATH"
 MANPATH="/opt/homebrew/opt/grep/libexec/gnuman:$MANPATH"
 
 
+#2021/11/17
+# color cat,less, etc...
+#  https://fhiyo.github.io/2017/11/14/colorize-terminal-output.html
+
+# read grc setting
+# [[ -s "/opt/homebrew/share/zsh/site-functions/usr/local/etc/grc.zsh" ]] && source /usr/local/etc/grc.zsh
+
+
+# less
+#export LESS='-R'
+#export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh  %s'
+
+# cat
+if [[ -x `which ccat` ]]; then
+  alias cat='ccat'
+fi
+
+# diff
+if [[ -x `which diff` ]]; then
+    alias diff='colordiff -u'
+fi
+
+
+### End Colorize ###
+
 
 #2020/2/23 emacs
 

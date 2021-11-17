@@ -37,6 +37,13 @@ brew "wdiff"
 brew "wget"
 brew "gnu-which"
 
+# other highlevel command replace
+brew "ccat" # replace cat
+brew "grc"  # ping, etc..
+brew "colordiff" # replace diff
+brew "source-hihlight" # replace less
+
+
 
 # cask font
 cask "font-hack-nerd-font"
