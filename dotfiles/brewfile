@@ -16,6 +16,9 @@ brew "imagemagick"
 brew "sqlite"
 brew "hub"     #githubの上級コマンド
 
+# update command
+brew "bash"    #ブレース展開にbash4以上が必要．
+
 # gnu command replace
 # https://qiita.com/eumesy/items/3bb39fc783c8d4863c5f
 # https://yu8mada.com/2018/07/25/install-gnu-commands-on-macos-with-homebrew/
@@ -65,7 +68,7 @@ cask "zoom"  #passwordを要求された．どうも自動で起動したっぽ�
 
 # cask for Lab
 cask "apachedirectorystudio"
-
+cask "nextcloud"
 
 
 # appstore
@@ -73,3 +76,5 @@ mas "Things 3", id: 904280696
 mas "WeatherBug", id: 1059074180
 
 
+# after things3 install
+cask "thingsmacsandboxhelper"
