@@ -43,6 +43,10 @@
 !/brewfile
 !/install_brew.sh
 
+#emacs
+init.el
+
+
 !/README.md
 #!/LICENSE
 !.gitignore
