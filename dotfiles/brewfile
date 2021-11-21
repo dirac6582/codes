@@ -15,6 +15,9 @@ brew "inetutils"
 brew "imagemagick"
 brew "sqlite"
 brew "hub"     #githubの上級コマンド
+brew "macfuse" # needed for sshfs
+brew "gromgit/fuse/sshfs-mac" #original sshfs is deprecated in brew. see https://blog.kmdkuk.com/2021/06/05/macでsshfsをインストール.html 
+
 
 # update command
 brew "bash"    #ブレース展開にbash4以上が必要．
@@ -38,6 +41,7 @@ brew "wget"
 brew "gnu-which"
 
 # other highlevel command replace
+# https://fhiyo.github.io/2017/11/14/colorize-terminal-output.html
 brew "ccat" # replace cat
 brew "grc"  # ping, etc..
 brew "colordiff" # replace diff
@@ -70,6 +74,7 @@ cask "dropbox"
 cask "grammarly"
 cask "background-music" #現在M1macに非対応
 cask "itsycal"
+cask "background-music" #password必須?
 cask "google-drive" #passwordが必須
 cask "zoom"  #passwordを要求された．どうも自動で起動したっぽくて，今後改善が必要．
 

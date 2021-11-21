@@ -20,7 +20,8 @@
 !/.zshenv
 !/.zprofile
 
-!/bin/
+
+!/bin/    #dirとその中身を設定するにはこの2行が必要．
 !/bin/**
 
 !/.gitignore_global
@@ -45,9 +46,16 @@
 
 #emacs
 !/init.el
-
+!/.terminfo
+!/.terminfo/**
 
 !/README.md
 #!/LICENSE
 !.gitignore
 !.gitkeep
+
+
+#ssh
+!/.ssh
+!/.ssh/config
+

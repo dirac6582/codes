@@ -22,3 +22,6 @@ done
 # init.elのリンクをはる．
 ln -snfv ${PWD}/init.el ~/.emacs.d/init.el
 
+
+
+# emacs true color用の設定．

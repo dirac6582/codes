@@ -270,47 +270,25 @@ RPROMPT='`rprompt-git-current-branch`'
 
 #eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/.dircolors-solarized/dircolors.ansi-dark`
 
-if [ `which gls`="/opt/local/bin/gls" ]; then
-    echo "system is macports"
-    alias ls='/opt/local/bin/gls -F --color=auto'
-    alias lsa='/opt/local/bin/gls -Fa --color=auto'
-    alias lsl='/opt/local/bin/gls -l --color=auto'
-
-    ##2020/2/23 awk to gawk
-    alias awk='/opt/local/bin/gawk'
-
-
-    ##2021/11/14 sed to gsed
-    alias sed='/opt/local/bin/gsed'
-fi
-
-
-
-
-PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
-
-MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
-MANPATH="/opt/homebrew/opt/findutils/libexec/gnuman:$MANPATH"
-MANPATH="/opt/homebrew/opt/gnu-sed/libexec/gnuman:$MANPATH"
-MANPATH="/opt/homebrew/opt/gnu-tar/libexec/gnuman:$MANPATH"
-MANPATH="/opt/homebrew/opt/grep/libexec/gnuman:$MANPATH"
+# 2021/11/19
+# homebrewに写ったことで，lsと打てばglsを引っ張ってくれる．
+# しかし，grcにもlsの設定があるため，バッティングする．そこで，glsにaliasを入れる．
+alias ls="gls -F --color=auto"
+alias lsa='gls -Fa --color=auto'
+alias lsl='gls -l --color=auto'
 
 
 #2021/11/17
 # color cat,less, etc...
 #  https://fhiyo.github.io/2017/11/14/colorize-terminal-output.html
 
-# read grc setting
-# [[ -s "/opt/homebrew/share/zsh/site-functions/usr/local/etc/grc.zsh" ]] && source /usr/local/etc/grc.zsh
-
+# read grc setting 
+[[ -s "/usr/local/etc/grc.zsh" ]] && source /usr/local/etc/grc.zsh
+[[ -s "/opt/homebrew/share/zsh/site-functions/usr/local/etc/grc.zsh" ]] && source /usr/local/etc/grc.zsh
 
 # less
-#export LESS='-R'
-#export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh  %s'
+export LESS='-R'
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh  %s'
 
 # cat
 if [[ -x `which ccat` ]]; then
@@ -337,13 +315,16 @@ fi
 
 #iterm2では，true colorを使用可能．これによってemacs 26以降でtrue color版を使える．
 #https://fossies.org/linux/emacs/doc/misc/efaq.texi#Colors-on-a-TTY
+#https://stackoverflow.com/questions/14672875/true-color-24-bit-in-terminal-emacs
 #alias e='TERM="xterm-24bit" emacs -nw'
 
 
-##emacs --daemonを使う場合のaliasの設
+##emacs TERM=xterm-direct infocmp | grep seta[bf]--daemonを使う場合のaliasの設
 #2021/10/28 
 #emacs-daemon+true colorに移行,こっちを使い始める．
-#xterm-directでもokらしい．
+#xterm-directでもokらしい．(が，自分のmacにはこのTERMが入ってなさそう)
+#https://ytyaru.hatenablog.com/entry/2020/05/26/000000
+#いずれにしても~/.terminfoディレクトリが必要なので，これもdotfileにいれておく．
 alias ee='TERM=xterm-24bit emacsclient -t'
 
 
@@ -456,3 +437,15 @@ function ssh_local() {
     badge $server
     ssh $server
 }
+
+
+# pyenv
+# pyenv
+#https://mitsudo.net/python環境の構築-mac-with-anaconda-by-homebrew/
+PYENV_ROOT=~/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# brew doctor 対策
+alias brew="env PATH=${PATH/\/Users\/${USER}\/\.pyenv\/shims:/} brew"

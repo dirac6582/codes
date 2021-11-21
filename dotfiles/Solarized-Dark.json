@@ -496,8 +496,8 @@
     "Blue Component" : 0.59607843137254901,
     "Green Component" : 0.63137254901960782
   },
-  "Transparency" : 0.021736199238578682,
   "HotKey Activated By Modifier" : false,
+  "Transparency" : 0.021736199238578682,
   "Background Color" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
@@ -509,7 +509,7 @@
   "Bound Hosts" : [
 
   ],
-  "Non Ascii Font" : "SauceCodeProNerdFontCompleteM-Medium 16",
+  "Non Ascii Font" : "HackNerdFontCompleteM-Regular 16",
   "Ansi 13 Color" : {
     "Red Component" : 0.42352941176470588,
     "Color Space" : "sRGB",

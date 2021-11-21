@@ -19,12 +19,11 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;==============================================================
 ;;;;;;;;;;;;
 ;;;;;;;;;;;;パスの設定(極力init.el中で初めの方に書いた方が良い)
 ;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;;;;;==============================================================
 
 
 ;;;; サブディレクトリも自動でロードパスを追加する関数（add-to-load-path関数の定義）
@@ -35,20 +34,14 @@
     (add-to-list 'load-path default-directory)
     (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
   (normal-top-level-add-subdirs-to-load-path))))))
-
-
-
-
+;;
 ;;~/.emacs.d/elisp ディレクトリをロードパスに追加
-(add-to-list 'load-path "~/projects/dotfiles/.emacs.d")
+;;(add-to-list 'load-path "~/projects/dotfiles/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/elpa")
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (add-to-list 'load-path "~/.emacs.d/elpa/doom-modeline-2.9.2/")
-
-  ;;この下のディレクトリは存在していないが．．．
-
-
-;; ;;
+;;
+;; 
 ;; ターミナル　パスを通していないので，以下を参照すること
 ;;  
 ;; 1，mktexlsr
@@ -76,15 +69,11 @@
 ;;     /opt/local/lib/perl5/5.16.3
 ;;     /opt/local/lib/perl5/site_perl
 ;;     /opt/local/lib/perl5/vendor_perl
-
-
-
-
-;;因数のディレクトリと，そのサブディレクトリをload-pathに追加
+;;
+;;packageのディレクトリと，そのサブディレクトリをload-pathに追加
 (add-to-load-path "elisp" "conf" "public_repos" "elpa" "site-lisp")
-
-
-
+;;
+;;
 ;;YaTeX関連のパス
 ;;2019/6/27 使うyatexを下の~/Library/emacs/yatexのものから変更した．
 ;;というのも，site-lisp以下にあるyatexpkg.elを編集したから．
@@ -96,39 +85,35 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-shell-mode-iterm-extensions/")
 
+;; icons in terminal
+;; https://github.com/sebastiencs/icons-in-terminal
+(add-to-list 'load-path "~/.local/share/icons-in-terminal/")
 
 
 ;;Tex関係のパス
 ;;2019/7/9  使うtexliveを2018へ．いらないと思われるpathをコメントアウトした．
 ;;結果として，texlive/2018/texmf-distさえpathが通っていれば良さそうであることが判明した．
 ;;これは昔試したときにはダメだったので，なんらかの変更があったのだろうか？
-;;(add-to-list 'load-path "/Applications/TeX/TeXShop/bin/")
-;;(add-to-list 'load-path "/usr/local/texlive/2014/texmf-dist/tex/")
-;;(add-to-list 'load-path "/usr/local/texlive/2014/texmf-dist/scripts/")
-;;(add-to-list 'load-path"/usr/local/texlive/texmf-local/tex/latex/local/misc/emathc150309/")
-;;(add-to-list 'load-path "/usr/local/texlive/texmf-local/tex/latex/local/misc/")
-;;(add-to-list 'load-path "/usr/local/texlive/2015/texmf-dist/tex/latex/")
-;;(add-to-list 'load-path "/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/")
-;;(add-to-list 'load-path "/usr/local/texlive/texmf-local/tex/latex/local/misc/tools/")
 (add-to-list 'load-path "/usr/local/texlive/2019/texmf-dist/")
-
-
+;;
+;;
 ;;https://emacs-jp.github.io/tips/environment-variable
 (setq exec-path (parse-colon-path (getenv "PATH")))
+;;
+;;
+;; aspell
+;; https://texwiki.texjp.org/?Aspell
+(add-to-list 'load-path "/opt/local/bin/")
+;;
+;;
+;;
+;;
+;;
 
 
- ;; aspell
- ;; https://texwiki.texjp.org/?Aspell
-  (add-to-list 'load-path "/opt/local/bin/")
-
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;;パッケージ管理
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 
 ;;packageというemacs独自のパッケージ管理システムがあり，それを利用可能にするための記述である．
 ;;実際にパッケージを追加する方法は
@@ -138,9 +123,6 @@
 ;;https://www.wagavulin.jp/entry/2016/07/04/211631
 ;; 2021/2/23 emacs27ではいらないっぽいwarningが出る．
 ;;(package-initialize)
-
-
-
 
 ;;移植用．
 ;;installしたものをここのリストに追加しておく（将来的にはこの作業も自動化したい）
@@ -215,14 +197,6 @@
 ;;emacs23.2以降では非推奨
 ;;(setq default-buffer-file-coding-system 'utf-8)
 
-;; Initial frame settings（これは多分GUIでしか意味のないsettingと思う）
-;;https://gist.github.com/yancya/4475969
-;;フォントについてはhttps://qiita.com/j8takagi/items/01aecdd28f87cdd3cd2c参照．（GUIのみ）
-;;(setq default-frame-alist
-;;      (append (list
-;;              '(font . "Takaoゴシック-10"))
-;;              default-frame-alist))
-
 
 ;;; ツールバーを非表示
 (tool-bar-mode -1)
@@ -250,13 +224,13 @@
 (add-hook 'find-file-hooks 'auto-insert)
 ;;insertするサンプルファイルの置き場所
 (setq auto-insert-directory "~/.emacs.d/elisp/insert/")
-;; 各ファイルによってテンプレートを切り替える
+;;各ファイルによってテンプレートを切り替える
 (setq auto-insert-alist
       (append '(
                ("\\.cpp$" . "template.cpp" )
                ("\\.h$"   . "template.h" )
                ("\\.cc$"  . "template.cc" )
-               ) auto-insert-alist ))
+              ) auto-insert-alist ))
 
 ;;;;; input special and control characters by "Option"
 (setq ns-option-modifier 'none)
@@ -366,144 +340,25 @@
            ; (define-key c-mode-base-map "\C-m" 'newline-and-indent) ;; RET キーで自動改行+インデント→これはすでにonになってる気がする
 ))
 
-;;コンパイルコマンドの変更
-;;2020/1/12
-;;ちなみに，これをもっと賢くしたものにsmart-compileがあり，melpaからダウンロード可能
-;;http://th.nao.ac.jp/MEMBER/zenitani/elisp-j.html#smart-compile
-;;コンパイルコマンドの変更について：https://www.google.com/search?client=safari&rls=en&ei=tHMbXtuPCprnwQPjmLOoCQ&q=compile-command+emacs+%E5%A4%89%E6%9B%B4&oq=compile-command+emacs+%E5%A4%89%E6%9B%B4&gs_l=psy-ab.3..33i160.1892.3829..3940...2.0..0.91.969.13......0....1..gws-wiz.......33i21j0i30j0i8i30.gpopmjszT78&ved=0ahUKEwjbuf-R5v7mAhWac3AKHWPMDJUQ4dUDCAo&uact=5
-;;ファイル名を取得するbuffer-file-name：https://www.gnu.org/software/emacs/manual/html_node/elisp/Buffer-File-Name.html
-;;文字列を結合するconcat：https://w.atwiki.jp/elisp/pages/12.html#id_f02424e9
-;;空白の正規表現\s：https://tomoya.hatenadiary.org/entry/20081228/1230421982
-
-;;c++用
-(add-hook 'c++-mode-hook
-	    '(lambda ()
-	       (setq compile-command (concat "g++\s" (file-name-nondirectory (buffer-file-name))))
-	    ))
-
-;;c用
-(add-hook 'c-mode-hook
-	  '(lambda ()
-	     (setq compile-command (concat "gcc\s" (file-name-nondirectory (buffer-file-name))))
-	     ))
-
-;;;シェルスクリプトの保存時に実行権限を追加
-;;https://hnw.hatenablog.com/entry/20140115
- (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 
-;;zshrcとかの時は自動でsourceできないかな？
-
-
-
-;;;日記の設定
-;;2020/2/8 独立した章にしていたのだが，emacsの標準で使える機能なので，こちらに移動した
-
-;;20200515 メモ1の設定はclmemoに移動
-
-;;メモ2
-;; (defun memo1 ()
-;;   (interactive)
-;;   (add-change-log-entry
-;;    nil
-;;      (expand-file-name "~/diary/diary1.txt"))) ;; ログ名
-;; (global-set-key "\C-cp" 'memo1 ) ;; キーバインド
-
-;;日記を追加するときは，上のをコピーペーストして，defunの名前と，filename,setkeyを変更すれば良いはず
-
-
-;;;;;画像関係テスト
-;; png, jpg などのファイルをemacsで開くと画像として表示
- (setq auto-image-file-mode t)
-
-;;image+
-;;(require 'image+)
-;;(imagex-auto-adjust-mode 1)
-
-;;;;;バックアップファイルの設定
-;;emacsファイルのバックアップファイルを~/.ehist以下に保存する
-;;http://yohshiy.blog.fc2.com/blog-entry-324.html
-(setq backup-directory-alist '((".*" . "~/.ehist")))
-
-;;矩形編集のminor-mode, cua-mode
-;;2020/2/24
-;;https://qiita.com/yyamamot/items/7efcbfdcccdb5fa45ebe
-;;https://kazuhira-r.hatenablog.com/entry/20120408/1333890311
-;; cua-modeの設定
-(cua-mode t)  ; cua-modeをオン
-(setq cua-enable-cua-keys nil)  ; CUAキーバインドを無効化
-
-
-
-;;;shell-modeに関する設定
-
-;;http://sakito.jp/emacs/emacsshell.html#id6
-;; shell の存在を確認（zshを優先して使う）
-(defun skt:shell ()
-  (or (executable-find "zsh")
-      (executable-find "bash")
-      (executable-find "cmdproxy")
-      (error "can't find 'shell' command in PATH!!")))
-
-;; Shell 名の設定
-(setq shell-file-name (skt:shell))
-(setenv "SHELL" shell-file-name)
-(setq explicit-shell-file-name shell-file-name)
-
-
-;;文字コードの設定
-(set-language-environment  'utf-8)
-(prefer-coding-system 'utf-8)
-
-;;
-(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;theme setting
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;デフォルトのテーマのload方法
-;;(color-theme-initialize)
-;;(load-theme 'deeper-blue t)
-
-;;melpaから
-;;https://fossies.org/linux/emacs/doc/misc/efaq.texi#Colors-on-a-TTY
-;;https://qiita.com/RIO18020/items/221b5e808b361e8f6a95
-;;https://github.com/hlissner/emacs-doom-themes
-(require 'doom-themes)
-;; Global settings (defaults)
-(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-      doom-themes-enable-italic t) ; if nil, italics is universally disabled
-;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
-;; may have their own settings.
-(load-theme 'doom-dracula t)
-;; Enable flashing mode-line on errors(color:violet)
-(doom-themes-visual-bell-config)
-;; Enable custom neotree theme (all-the-icons must be installed!)
-(doom-themes-neotree-config)
-;; or for treemacs users
-(setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
-(doom-themes-treemacs-config)
-;; Corrects (and improves) org-mode's native fontification.
-(doom-themes-org-config)
-
-
-;; (use-package doom-themes
-;;     :custom
-;;     (doom-themes-enable-italic t)
-;;     (doom-themes-enable-bold t)
-;;     :custom-face
-;;     (doom-modeline-bar ((t (:background "#6272a4"))))
-;;     :config
-;;     (load-theme 'doom-dracula t)
-;;     (doom-themes-neotree-config)
-;;     (doom-themes-org-config))
+ (use-package doom-themes
+     :custom
+     (doom-themes-enable-italic t) ; if nil, italics is universally disabled
+     (doom-themes-enable-bold t) ; if nil, bold is universally disabled
+     :custom-face
+     (doom-modeline-bar ((t (:background "#6272a4"))))
+     :config
+     ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme may have their own settings.
+     (load-theme 'doom-dracula t)
+     ;; ;; Enable flashing mode-line on errors(color:violet)
+     (doom-themes-visual-bell-config)
+     ;; Enable custom neotree theme (all-the-icons must be installed!)
+     (doom-themes-neotree-config)
+     ;; Corrects (and improves) org-mode's native fontification.
+     (doom-themes-org-config))
+;; (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
+;; (doom-themes-treemacs-config)
 
 
 
@@ -553,10 +408,9 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;; 拡張子によるmodeの指定．
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 
 ;; https://blog.goo.ne.jp/dak-ikd/e/01b45dc521b48536fbd0ac4d6a4a4d6e
 (add-to-list 'auto-mode-alist '("\\.pyx\\'" . python-mode))
@@ -568,7 +422,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;all-the-iconsはGUIでのみ有効である．
-(require 'all-the-icons)
+(use-package all-the-icons)
 (setq all-the-icons-color-icons t)
 (setq all-the-icons-icon-for-buffer t)
 (setq all-the-icons-icon-for-dir t)
@@ -580,14 +434,26 @@
 (all-the-icons-octicon "file-binary")
 
 
+;; icons-in-terminal
+(use-package icons-in-terminal)
+;; (icons-in-terminal-insert)
+;; (icons-in-terminal-insert-faicon)
+;; (icons-in-terminal-faicon "book")
+;;(icons-in-terminal-icon-for-buffer)
+;;(icons-in-terminal-icon-for-mode 'emacs-lisp-mode)
+;;(icons-in-terminal-icon-for-file "template.el")
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; beacon（カーソルを光らせる）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;(use-package 'sidebar)
+;;(global-set-key (kbd "C-x C-f") 'sidebar-open)
+;;(global-set-key (kbd "C-x C-a") 'sidebar-buffers-open)
+
+;;;;=================================
+;;;; beacon（カーソルを光らせる）
+;;;;=================================
+;;
 ;;2020/4/8
 ;;https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf
-
+;;
 (use-package beacon
     :custom
     (beacon-color "yellow")
@@ -595,16 +461,15 @@
     (beacon-mode 1))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;; dashboard（emacsの起動画面のカスタマイズ）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=================================
+;;
 ;;2020/4/10
 ;;https://github.com/emacs-dashboard/emacs-dashboard
 ;;https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf
 ;;https://qiita.com/hyakt/items/f4468facec0478e06f7a
-
+;;
 ;;bookmarksはemacsの標準機能
 ;;http://tototoshi.hatenablog.com/entry/20101226/1293334388
 
@@ -623,8 +488,7 @@
 ;;emacs daemonを使う時にもdashboardを起動する．（2020/5/8）
 ;;https://www.reddit.com/r/emacs/comments/8i2ip7/emacs_dashboard_emacsclient
 (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
-;;→なんか微妙な挙動を示しているので一時停止
-;;2021/10/28 使用再開: 
+;;→なんか微妙な挙動を示しているので一時停止→2021/10/28 使用再開
 
 ;;ダッシュボードをもう一回開きたいとき．
 ;;https://qiita.com/minoruGH/items/d5f2975a76b6ca4ceb1c
@@ -675,8 +539,8 @@
 ;; R :: mv
 ;; C :: cp
 ;; D :: rm
-
-
+;;(use-package icons-in-terminal-dired.el)
+;;(set-fontset-font t '(#Xe000 . #Xf8ff) "icons-in-terminal")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -697,7 +561,7 @@
 	 ("C-g" . symbol-overlay-remove-all) ;;ハイライトキャンセル
 	 :map symbol-overlay-map
 	 ("p" . symbol-overlay-jump-prev) ;; 前のシンボルへ
-	 ("n" . symbol-overlay-jump-next));; 次のシンボルへ	 
+	 ("n" . symbol-overlay-jump-next));; 次のシンボルへ
   :config
   (add-hook 'prog-mode-hook #'symbol-overlay-mode)
   (add-hook 'markdown-mode-hook #'symbol-overlay-mode)
@@ -708,15 +572,15 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
 ;; google this
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
+;;;;==============================
 ;;2020/4/7
 ;;https://qiita.com/blue0513/items/c0dc35a880170997c3f5
 ;;https://qiita.com/takaxp/items/00245794d46c3a5fcaa8#設定
-(require 'google-this)
-(with-eval-after-load "google-this"
+(use-package google-this
+  :config
     (defun my:google-this ()
       "検索確認をスキップして直接検索実行"
       (interactive)
@@ -724,26 +588,26 @@
 
 
 ;;2020/10/06  ただのgだったけど，それだとけっこう被っちゃうので，gggにした．
-(require 'selected)
+(use-package selected)
 (selected-global-mode 1)
 (define-key selected-keymap (kbd "ggg") #'my:google-this)
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
 ;; imenu-list
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
+;;;;==============================
 (use-package imenu-list)
 
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;modelineに関する一般的な設定
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; 2020/3/2 現在の関数名をモードラインに表示
-;;;https://qiita.com/Klein/items/1f49eddcd94474f7a9ac
+;;;;=================================
+;;   modelineに関する一般的な設定
+;;;;=================================
+;;
+;; 2020/3/2 現在の関数名をモードラインに表示
+;; https://qiita.com/Klein/items/1f49eddcd94474f7a9ac
 (which-function-mode t)
 
 ;;行番号，列番号の表示
@@ -780,11 +644,11 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;doom-modeline
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=================================
+;;    doom-modeline
+;;;;=================================
+;;
+;;
 ;;https://github.com/domtronn/spaceline-all-the-icons.el
 ;;http://8gu15.hatenablog.jp/entry/2018/12/06/071125
 (use-package spaceline-all-the-icons
@@ -832,8 +696,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;powerline-modeline
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
+;;;;==============================
 ;;2020/4/7 今まで表示がよくなかったのだが，powerline.el本体を直接弄ることでseparatorに関する問題を解消
 
 ;; (require 'powerline)
@@ -966,39 +830,40 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;hiwin(非active windowの背景色)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
+;;;;==============================
 
-;; 非アクティブウィンドウの背景色を設定
-;;2020/1/13
-;;http://emacs.rubikitch.com/hiwin/
-(use-package hiwin
-  :ensure t
-  :config
-  (hiwin-activate)
-  ;;色を変更する場合
-  ;;(set-face-background 'hiwin-face "gray80")
-)
+;; 2021/11/19 どうもこいつを使うとemacsclientとの相性が悪い．
+
+;; ;; 非アクティブウィンドウの背景色を設定
+;; ;;2020/1/13
+;; ;;http://emacs.rubikitch.com/hiwin/
+;; (use-package hiwin
+;;   :ensure t
+;;   :config
+;;   (hiwin-activate)
+;;   ;;色を変更する場合
+;;   ;;(set-face-background 'hiwin-face "gray80")
+;; )
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;rainbow-delimiters（括弧の深さで色分け）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=====================================
+;;    rainbow-delimiters（括弧の深さで色分け）
+;;;;=====================================
+;;
 ;;2020/4/6
 ;; https://yuelab82.hatenablog.com/entry/terminal_now
 (use-package rainbow-delimiters
   :ensure t
   :config 
   (add-hook 'yatex-mode-hook 'rainbow-delimiters-mode)
-  )
+   )
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;anzu（search中に合計の数などを表示する）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=====================================
+;;    anzu（search中に合計の数などを表示する）
+;;;;=====================================
+;;
 ;;2020/4/7 doom-modelineでも使えるようになっている．
 ;;https://emacs-jp.github.io/packages/mode-line/anzu
 (use-package anzu
@@ -1006,26 +871,22 @@
   (global-anzu-mode t))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=====================================
 ;; open-junk-file（使い捨てファイルの作成）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=====================================
 ;;2020/4/10
 ;;https://qiita.com/ytanto/items/c6e624fa099d8d12a4db#open-junk-file
 ;;任意の書式のファイルをショトカ\C-x jで開けるので便利．
 
 (when (require 'open-junk-file)
-  (setq open-junk-file-format "~/Documents/junk/%Y-%m-%d-%H%M%S.")
+  (setq open-junk-file-format "${HOME}/Documents/emacs_junk/%Y-%m-%d-%H%M%S.")
   (global-set-key (kbd "C-x j") 'open-junk-file))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=====================================
 ;; mew
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=====================================
+;;
 ;; https://qiita.com/kai2nenobu/items/5dfae3767514584f5220
 ;; :config キーワードはライブラリをロードした後の設定などを記述．
 ;; よって，setqはconfigの中にかく．
@@ -1066,11 +927,10 @@
   (setq mew-biff-interval 1))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=====================================
 ;;elscreen（ウィンドウの分割）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=====================================
+;;
 ;;2020/1/30 elscreenパッケージをELFAからダウンロード（emacs本に記述あり）
 ;;elscreenのprefix-keyはデフォルトで\C-zである．
 ;;変更したければ以下
@@ -1140,30 +1000,31 @@
 ;;(nyan-mode 1)
 
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; neotree（サイドバー）
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; ;;2020/1/13 他にdiredというのもあって，こっちの方が機能豊富らしい．
-;; ;;https://qiita.com/minoruGH/items/2034cad4efe8c5dee4d4
+;;;;=================================
+;;   neotree（サイドバー）
+;;;;=================================
+;;
+;;
+;; 2020/1/13 他にdiredというのもあって，こっちの方が機能豊富らしい．
+;; https://qiita.com/minoruGH/items/2034cad4efe8c5dee4d4
 (use-package neotree
   :bind ("\C-q" . neotree-toggle)   ;;neotreeの起動を\C-qへ変更
   :config
   ;; 隠しファイルをデフォルトで表示
   (setq neo-show-hidden-files t)
   ;; グラフィックはemacs-nwでは使用不可．
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  ;;(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-show-hidden-files t) ; dot-fileも表示する
+  (setq neo-theme 'icons)
   ;; (display-graphic-p)
  )
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; howm（メモ書き環境）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=================================
+;;    howm（メモ書き環境）
+;;;;=================================
+;;
 ;;2020/2/8 MELPAからインストール（emacs本に記述あり）
 ;;既存のメモ書きとの差別化を図る．
 
@@ -1212,29 +1073,30 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;; which-key（key-bindを表示してくれる）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
+;;
 ;;2020/4/10
 ;;https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf
   (use-package which-key
     :diminish which-key-mode
     :hook (after-init . which-key-mode))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;; amx（alternative interface for M-x）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
+;;
 ;;2020/4/10
 ;;M-xでコマンドを実行した時，Kbdがあればそれを表示する．
 ;;https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf
 (use-package amx)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;=================================
 ;; clmemo with clgrep （Change-Log支援）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
+;;
 ;;2020/4/13
 ;;change-logを本格的に使えるようにメスを入れる．
 ;;http://bigfatcat.hateblo.jp/entry/20071010/1192025644
@@ -1270,22 +1132,12 @@
              (define-key change-log-mode-map "\C-c\C-g" 'clgrep)
              (define-key change-log-mode-map "\C-c\C-t" 'clgrep-title)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; image+
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; http://lioon.net/emacs-image-viewer
-;;これはGUIでのみ有効
-;; (require 'image+)
-;; (setq imagex-auto-adjust-mode t)
 
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;; flycheck(構文チェック)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=================================
+;;
 ;;2020/2/8 MELPAからinstall（emacs本に記述あり）
 ;;Cなどの構文チェックが可能
 ;;基本的には自動でスペルチェックをして，おかしいところを下線で教えてくれる．
@@ -1310,13 +1162,10 @@
 
 ;;http://cha.la.coocan.jp/doc/EmacsFlycheck.html#org814f11c
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; aspell
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
+;;;;=================================
+;;   aspell
+;;;;=================================
+;;
 ;; (setq-default ispell-program-name "aspell")
 ;; (with-eval-after-load "ispell"
 ;;   (setq ispell-local-dictionary "en_US")
@@ -1348,11 +1197,10 @@
     )
  
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;; git-gutter
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
+;;
 ;;2020/4/7 git差分を表示してくれる．
 ;;こいつの問題点は，linum-modeとの併用に問題が生じてしまう点．（と言っても見た目が崩れるだけだが）
 ;;解決としてgit-gutter-fringeと言うのも開発されているが，それはemacs-nwなどのtty frameでは動作しない．
@@ -1364,12 +1212,10 @@
   :config
   (global-git-gutter+-mode t))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;; Auto Complete（予測補完）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=================================
+;;
 ;; ;;2019/12/26
 ;; (require 'auto-complete-config)
 ;; (ac-config-default)
@@ -1381,12 +1227,10 @@
 ;; (setq ac-use-menu-map t)       ;; 補完メニュー表示時に\C-n,\C-pで補完候補選択
 ;; (setq ac-use-fuzzy t)          ;; 曖昧マッチ
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;;Company（予測補完）
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=================================
+;;
 ;;2020/4/10
 ;;auto completeよりcompany modeの方が一般的らしいので乗り換えた．
 (use-package company
@@ -1406,11 +1250,10 @@
 
 
 
-;; ----- lsp ----- ;;
+;;;;=================================
+;; lsp-mode 
+;;;;=================================
 
-;;;;;;;;;;;;;;
-;; lsp-mode ;;
-;;;;;;;;;;;;;;
 (use-package lsp-mode)
 ;; config
 (setq lsp-print-io nil)
@@ -1430,9 +1273,11 @@
     (global-set-key (kbd "M-.") 'xref-find-definitions)
     (global-set-key (kbd "M-/") 'xref-find-references))
 
-;;;;;;;;;;;;;;
-;;  lsp-ui  ;;
-;;;;;;;;;;;;;;
+
+;;;;=================================
+;; lsp-ui
+;;;;=================================
+
 (use-package lsp-ui)
 
 ;; config
@@ -1446,11 +1291,9 @@
 ;; hook
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 ;; magit
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
 
 ;; https://qiita.com/roses-ug/items/5205706df2655130f69e
 ;; https://qiita.com/maueki/items/70dbf62d8bd2ee348274
@@ -1467,27 +1310,25 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; shell-modeでエスケープシークエンスを読み込む
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=================================
+;; shell-modeでescape-sequenceを読み込む
+;;;;=================================
 
 ;;2020/4/7
 ;;https://iriya-ufo.hateblo.jp/entry/20080411/1207890141
 ;;試してみたけど，これでもzshプロンプトは改善されなかった．
-(autoload 'ansi-color-for-comint-mode-on "ansi-color"
-          "Set `ansi-color-for-comint-mode' to t." t)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;;(autoload 'ansi-color-for-comint-mode-on "ansi-color"
+ ;;         "Set `ansi-color-for-comint-mode' to t." t)
+;;(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================;;;;
+;;;;==============================;;;;
 ;; yasnippet 関連の設定
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================;;;;
+;;;;==============================;;;;
 
 
 ;;2019/12/31
@@ -1501,34 +1342,34 @@
 ;;公式のyasnippet-snippetsがあるから，これも入れること．
 ;;これに関して，latex-modeのフォルダをcpしてyatex-modeと言うフォルダも作っておくと，yatex-modeでもsnippetが動くので便利
 
-;; 自分用・追加用テンプレート -> mysnippetに作成したテンプレートが格納される
-(require 'yasnippet)
-(require 'yasnippet-snippets)
-(setq yas-snippet-dirs
-      '("~/.emacs.d/mysnippets"
-        ;"~/.emacs.d/yasnippets"
-	;"~/.emacs.d/yasnippets/snippets"
-	"~/.emacs.d/elpa/yasnippet-snippets-20200403.1026/snippets"
-        ))
+;; ;; 自分用・追加用テンプレート -> mysnippetに作成したテンプレートが格納される
+;; (require 'yasnippet)
+;; (require 'yasnippet-snippets)
+;; (setq yas-snippet-dirs
+;;       '("~/.emacs.d/mysnippets"
+;;         ;"~/.emacs.d/yasnippets"
+;; 	;"~/.emacs.d/yasnippets/snippets"
+;; 	"~/.emacs.d/elpa/yasnippet-snippets-20200403.1026/snippets"
+;;         ))
 
-;; 既存スニペットを挿入する
-(define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
+;; ;; 既存スニペットを挿入する
+;; (define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
 
-;; 新規スニペットを作成するバッファを用意する
-(define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
+;; ;; 新規スニペットを作成するバッファを用意する
+;; (define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
 
-;; 既存スニペットを閲覧・編集する
-(define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
+;; ;; 既存スニペットを閲覧・編集する
+;; (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
 
-(yas-global-mode 1)
+;; (yas-global-mode 1)
 
 
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;;;;==============================;;;;
+;; ;;;;==============================;;;;
 ;; ;; color-moccur
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;;;;==============================;;;;
+;; ;;;;==============================;;;;
 
 ;; ;;2020/2/24
 ;; ;;https://gist.github.com/d-kuro/352498c993c51831b25963be62074afa
@@ -1544,16 +1385,12 @@
 
 
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;========================
 ;; undohist and undo-tree
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;========================
+;;
 ;;2020/2/24
 ;; https://qiita.com/ytanto/items/c6e624fa099d8d12a4db
-
 
 ;;undohist
 ;;emacsのデフォルト機能undoを永続的に使えるようにする
@@ -1569,20 +1406,19 @@
   ;; (define-kry global-map (kby "\C-'") 'undo-tree-redo)
   (global-undo-tree-mode))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================;;;;
+;;;;==============================;;;;
 ;; point-undo
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================;;;;
+;;;;==============================;;;;
 
 ;;2020/2/24 elpaに存在せず
 ;;http://emacs.rubikitch.com/sd1509-safeguard-undo-redo/
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;=======================
 ;; volatile-highlights
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=======================
 
 ;;2020/5/31 ペーストした時に視覚的にハイライト
 ;;https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf
@@ -1594,21 +1430,17 @@
     :custom-face
     (vhl/default-face ((nil (:foreground "#FF3333" :background "#FFCDCD")))))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=======================
 ;; quick-run
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=======================
+;;
 ;;2020/2/24
 ;;https://qiita.com/lethe2211/items/2271fd3530248eb7db62
 (use-package quickrun)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=======================
 ;; gtag.el
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=======================
 
 (use-package gtags
   :config
@@ -1618,19 +1450,15 @@
   (setq gtags-mode-auto-update t)
   )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=======================
 ;; helm
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=======================
 ;;2020/2/26
 (use-package helm-config)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=======================
 ;; highlight-indentaiton
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;=======================
 
 ;;2020/3/2
 ;;indent-guideというのもある
@@ -1644,11 +1472,12 @@
   ;;(add-hook 'yatex-mode-hook 'highlight-indentation-mode)
   )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================;;;;
+;;;;==============================;;;;
+
 ;; fill-column-indicator
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================;;;;
+;;;;==============================;;;;
 
 ;(setq fill-column 85)
 
@@ -1658,11 +1487,11 @@
 ;;     org-mode
 ;;    git-commit-mode) . fci-mode))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================;;;;
+;;;;==============================;;;;
 ;; dumb-jump
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================;;;;
+;;;;==============================;;;;
 
 ;;2020/1/11
 ;;tagを使わずにジャンプしてくれるやつ
@@ -1678,20 +1507,20 @@
   (setq dumb-jump-mode t)
   )
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
 ;; org-modeの設定
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
+;;;;==============================
 ;;org-modeは標準で入っているので，org自体のインストールは不要
 
 ;;org-modeで初めから画像で表示（gnu emacsのみ）
-(setq org-startup-with-inline-images t)
+;;(setq org-startup-with-inline-images t)
 ;;(setq org-display-inline-images t)
 
 ;;org-modeでの画像の大きさの指定．（大きすぎると，emacsがフリーズする）
 ;;このように配列で指定すると，最初はorgファイル内の設定を優先してくれる．
 ;;https://www.reddit.com/r/emacs/comments/55zk2d/adjust_the_size_of_pictures_to_be_shown_inside/
-(setq org-image-actual-width '(100))
+;;(setq org-image-actual-width '(100))
 
 
 ;;howm-modeでもorg-modeを起動
@@ -1804,7 +1633,7 @@
                 ("p" . org-pomodoro)))
 
 
-;;org-bullets は*を変更できるやつ．ただどうもgnu-emacs限定？
+;;org-bullets は*を変更できるやつ.
 (use-package org-bullets
       :custom (org-bullets-bullet-list '("" "" "" "" "" "" "" "" "" ""))
       :hook (org-mode . org-bullets-mode))
@@ -1819,10 +1648,10 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
 ;; py-autopep8 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
+;;;;==============================
 
 ; 20200713 pythonで，自動でコード規約に従ってくれる．
 ; https://ksknw.hatenablog.com/entry/2016/05/07/171239
@@ -1833,10 +1662,10 @@
 (py-autopep8-enable-on-save)
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; YaTeX 関連の設定
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;=================================
+;;    YaTeX 関連の設定
+;;;;=================================
 
 ;;2019/5/26
 ;;emacs26で動作させるために必要なようだ
@@ -2069,20 +1898,20 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; dvi->pdf and Preview;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;=====================
+;; dvi->pdf and Preview
+;;;;=====================
+;;
 ;;previewとしてskimを用いる．
 ;;skimのインストールが必要なので注意すること．
 ;;また，自動更新のためにはskimの環境設定->同期から少し弄る必要あり
 (setq dvi2-command "open -a Skim")
-
+;;
 ;;dviprintコマンド
 ;;https://www-he.scphys.kyoto-u.ac.jp/member/shotakaha/dokuwiki/doku.php?id=toolbox:emacs:yatex:start
 (setq dviprint-command-format "dvipdfmx %s")
 ;;(setq dviprint-command-format "~/.emacs.d/dvpd.sh %s")
-
+;;
 
 ;プレビュー時自動で拡張子を補完する
 (defvar YaTeX-dvi2-command-ext-alist
@@ -2113,11 +1942,11 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
+;;;;==============================
 ;; RefTeX with YaTeX;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;==============================
+;;;;==============================
 
 ;;2020/4/10 現在はRefTeXの機能は使わずに，yatexのデフォルトの\ref，\cite機能を使っている．
 
@@ -2130,15 +1959,11 @@
 
 
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;===============================
 ;; Emacsに自動で追加されたやつ他
 ;; Emacsは設定が更新されると，init.elの末尾に追加していく
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-
-
+;;;;===============================
+;;
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
