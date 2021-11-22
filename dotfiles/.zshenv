@@ -74,14 +74,14 @@ MANPATH=/usr/local/opt/grep/libexec/gnuman:${MANPATH}
 
 
 # setting for M1 mac
- PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
- PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
- PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
- PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
- PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+ PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:${PATH}
+ PATH=/opt/homebrew/opt/findutils/libexec/gnubin:${PATH}
+ PATH=/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}
+ PATH=/opt/homebrew/opt/gnu-tar/libexec/gnubin:${PATH}
+ PATH=/opt/homebrew/opt/grep/libexec/gnubin:${PATH} 
 
- MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
- MANPATH="/opt/homebrew/opt/findutils/libexec/gnuman:$MANPATH"
- MANPATH="/opt/homebrew/opt/gnu-sed/libexec/gnuman:$MANPATH"
- MANPATH="/opt/homebrew/opt/gnu-tar/libexec/gnuman:$MANPATH"
- MANPATH="/opt/homebrew/opt/grep/libexec/gnuman:$MANPATH"
+ MANPATH=/opt/homebrew/opt/coreutils/libexec/gnuman:${MANPATH}
+ MANPATH=/opt/homebrew/opt/findutils/libexec/gnuman:${MANPATH}
+ MANPATH=/opt/homebrew/opt/gnu-sed/libexec/gnuman:${MANPATH}
+ MANPATH=/opt/homebrew/opt/gnu-tar/libexec/gnuman:${MANPATH}
+ MANPATH=/opt/homebrew/opt/grep/libexec/gnuman:${MANPATH}
