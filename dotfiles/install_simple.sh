@@ -25,3 +25,5 @@ ln -snfv ${PWD}/init.el ~/.emacs.d/init.el
 
 
 # emacs true color用の設定．
+# https://stackoverflow.com/questions/14672875/true-color-24-bit-in-terminal-emacs
+tic -x -o ${HOME}/.terminfo ${BASEDIR}/.terminfo/78/terminfo-24bit.src
