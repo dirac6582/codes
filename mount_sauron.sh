@@ -17,8 +17,21 @@
 # --ポート番号：プロバイダによっては接続してほしいポート番号が違っていたりするみたいです。プロバイダのマニュアル参照の事
 ## ----------------------------
 
+
+#接続前にすでに繋がっていれば切断する．
+# 接続解除
+
+if [ ! -d ~/sauron ]; then
+    # 存在しない場合は作成（本処理へ)
+    diskutil unmount ~/sauron
+fi
+
+
+
 # sauronへの接続
 #sshfs amano@sauron3:/home/amano ~/sauron -oIdentityFile ~/.ssh/id_sauron_imacnew -p 22
 
 sshfs amano@sauron3:/home/amano ~/sauron -p 22
+
+
 
