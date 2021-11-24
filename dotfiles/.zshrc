@@ -316,7 +316,7 @@ fi
 #iterm2では，true colorを使用可能．これによってemacs 26以降でtrue color版を使える．
 #https://fossies.org/linux/emacs/doc/misc/efaq.texi#Colors-on-a-TTY
 #https://stackoverflow.com/questions/14672875/true-color-24-bit-in-terminal-emacs
-#alias e='TERM="xterm-24bit" emacs -nw'
+alias e='TERM="xterm-24bit" emacs -nw'
 
 
 ##emacs TERM=xterm-direct infocmp | grep seta[bf]--daemonを使う場合のaliasの設
