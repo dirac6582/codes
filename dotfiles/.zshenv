@@ -48,7 +48,7 @@ export PATH="/Users/amanotomohito/works/codes:$PATH"
 
 
 #2021/11/15 for homebrew on M1 mac
-if [-d /opt/homebrew/bin/brew ]; then
+if [ -d /opt/homebrew/bin/brew ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
