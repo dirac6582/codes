@@ -284,6 +284,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(doom-modeline-bar ((t (:background "#6272a4"))))
  '(flycheck-error ((t (:foreground "brightmazenta" :underline (:color "Foreground Color" :style line)))))
  '(flycheck-warning ((t (:foreground "green" :underline (:color "Foreground Color" :style line)))))
  '(font-lock-variable-name-face ((t (:foreground "orange2"))))
@@ -345,7 +346,8 @@
 
 
 
- (use-package doom-themes
+(use-package doom-themes
+     :ensure t
      :custom
      (doom-themes-enable-italic t) ; if nil, italics is universally disabled
      (doom-themes-enable-bold t) ; if nil, bold is universally disabled
@@ -1016,9 +1018,10 @@
   ;; 隠しファイルをデフォルトで表示
   (setq neo-show-hidden-files t)
   ;; グラフィックはemacs-nwでは使用不可．
-  ;;(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq neo-show-hidden-files t) ; dot-fileも表示する
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   (setq neo-theme 'icons)
+  ;;https://www.emacswiki.org/emacs/NeoTree
+  (setq neo-smart-open t)
   ;; (display-graphic-p)
  )
 
@@ -1986,12 +1989,8 @@
  '(flycheck-checker-error-threshold 1000)
  '(org-agenda-files nil)
  '(org-bullets-bullet-list '("" "" "" "" "" "" "" "" "" "") t)
- '(org-pomodoro-ask-upon-killing t t)
- '(org-pomodoro-format "%s" t)
- '(org-pomodoro-long-break-format "%s" t)
- '(org-pomodoro-short-break-format "%s" t)
  '(package-selected-packages
-   '(vterm eglot ## outline-magic py-autopep8 volatile-highlights w3m mew fill-column-indicator magit org-bullets org-pomodoro org-beautify-theme doom-modeline company-lsp lsp-ui lsp-mode blgrep clmemo amx which-key package-utils dashboard open-junk-file company-math company git-gutter+ git-gutter google-this selected symbol-overlay beacon anzu flycheck-color-mode-line ov rainbow-delimiters yatex spaceline-all-the-icons highlight-indentation indent-guide nyan-mode spaceline powerline total-lines helm imenu-list eyebrowse use-package gtags atom-one-dark-theme quickrun color-moccur yasnippet web-mode solarized-theme projectile neotree howm hiwin flycheck elscreen dumb-jump color-theme-sanityinc-solarized auto-complete all-the-icons)))
+   '(doom-modeline-now-playing doom hide-mode-line vterm eglot ## outline-magic py-autopep8 volatile-highlights w3m mew fill-column-indicator magit org-bullets org-pomodoro org-beautify-theme doom-modeline company-lsp lsp-ui lsp-mode blgrep clmemo amx which-key package-utils dashboard open-junk-file company-math company git-gutter+ git-gutter google-this selected symbol-overlay beacon anzu flycheck-color-mode-line ov rainbow-delimiters yatex spaceline-all-the-icons highlight-indentation indent-guide nyan-mode spaceline powerline total-lines helm imenu-list eyebrowse use-package gtags atom-one-dark-theme quickrun color-moccur yasnippet web-mode solarized-theme projectile neotree howm hiwin flycheck elscreen dumb-jump color-theme-sanityinc-solarized auto-complete all-the-icons)))
 
 ;;faceをいじる
 ;;https://qiita.com/AnchorBlues/items/91026c4f1c0745f5b851
