@@ -1445,13 +1445,15 @@
 ;; gtag.el
 ;;;;=======================
 
-(use-package gtags
-  :config
-  ;;gtags-modeのkbyを有効にする
-  (setq gtags-suggested-key-mapping t)
-  ;;file保存時に自動でtagをupdate
-  (setq gtags-mode-auto-update t)
-  )
+;; (use-package gtags
+;;   :config
+;;   ;;gtags-modeのkbyを有効にする
+;;   (setq gtags-suggested-key-mapping t)
+;;   ;;file保存時に自動でtagをupdate
+;;   (setq gtags-mode-auto-update t)
+;;   )
+
+
 
 ;;;;=======================
 ;; helm
