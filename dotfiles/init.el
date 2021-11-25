@@ -85,9 +85,12 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-shell-mode-iterm-extensions/")
 
+(add-to-list 'load-path "/Library/TeX/texbin")
+
 ;; icons in terminal
+;; 2021/11/24 一旦disabled
 ;; https://github.com/sebastiencs/icons-in-terminal
-(add-to-list 'load-path "~/.local/share/icons-in-terminal/")
+;; (add-to-list 'load-path "~/.local/share/icons-in-terminal/")
 
 
 ;;Tex関係のパス
@@ -435,7 +438,7 @@
 
 
 ;; icons-in-terminal
-(use-package icons-in-terminal)
+;;(require 'icons-in-terminal)
 ;; (icons-in-terminal-insert)
 ;; (icons-in-terminal-insert-faicon)
 ;; (icons-in-terminal-faicon "book")
@@ -626,7 +629,7 @@
 
 ;;https://qiita.com/blue0513/items/99476f4ae51f17600636
 ;;powerlineと同時に使うと表示してくれない．
-(require 'total-lines)
+(use-package total-lines)
 (global-total-lines-mode t)
 (defun my-set-line-numbers ()
   (setq-default mode-line-front-space
@@ -1655,7 +1658,7 @@
 
 ; 20200713 pythonで，自動でコード規約に従ってくれる．
 ; https://ksknw.hatenablog.com/entry/2016/05/07/171239
-(require 'py-autopep8)
+(use-package py-autopep8)
 ; これは一行上限を200文字へ．
 (setq py-autopep8-options '("--max-line-length=200"))
 (setq flycheck-flake8-maximum-line-length 200)
