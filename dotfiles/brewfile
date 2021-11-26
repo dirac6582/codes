@@ -3,7 +3,7 @@
 
 # https://dev-yakuza.posstree.com/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/#homebrew%E3%81%A8brewfile%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
 
-
+0;95;0c
 # apps
 brew "mas"
 brew "emacs"
@@ -74,6 +74,7 @@ cask "dropbox"
 cask "grammarly"
 cask "background-music" #現在M1macに非対応
 cask "itsycal"
+cask "db-browser-for-sqlite" 
 cask "background-music" #password必須?
 cask "google-drive" #passwordが必須
 cask "zoom"  #passwordを要求された．どうも自動で起動したっぽくて，今後改善が必要．
