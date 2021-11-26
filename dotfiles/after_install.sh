@@ -15,3 +15,10 @@ curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utili
 # iterm2 setting file
 # https://dev-yakuza.posstree.com/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/#iterm2
 cp ./com.googlecode.iterm2.plist ${HOME}/Library/Application\ Support/iTerm2/DynamicProfiles/
+
+
+
+
+
+# chrome extension
+# keepa/ things3 integration / zotero /add-block
