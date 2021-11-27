@@ -22,3 +22,7 @@ cp ./com.googlecode.iterm2.plist ${HOME}/Library/Application\ Support/iTerm2/Dyn
 
 # chrome extension
 # keepa/ things3 integration / zotero /add-block
+
+
+# mac keyboard
+# 句読点の設定．\の設定．
