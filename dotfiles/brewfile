@@ -57,6 +57,7 @@ cask "font-menlo-for-powerline"
 # cask
 # cask "anaconda" 現在M1macに非対応
 cask "google-chrome"
+cask "hiddenbar"
 cask "iterm2"
 cask "alfred"
 cask "notion"
