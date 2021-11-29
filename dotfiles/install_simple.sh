@@ -14,14 +14,22 @@ for f in .??*; do
     [ "$f" = ".gitignore" ] && continue
     [ "$f" = ".gitconfig.local.template" ] && continue
     [ "$f" = ".gitmodules" ] && continue
+    [ "$f" = ".DS_Store" ] && continue
     
     # シンボリックリンクを貼る
     ln -snfv ${PWD}/"$f" ~/
 done
 
 # init.elのリンクをはる．
-ln -snfv ${PWD}/init.el ~/.emacs.d/init.el
+mkdir ${HOME}/.emacs.d
+ln -snfv ${PWD}/.emacs.d/init.el ~/.emacs.d/init.el
 
+# make directories for emacs
+mkdir ${HOME}/.emacs.d/elpa
+mkdir ${HOME}/.emacs.d/elisp
+mkdir ${HOME}/.emacs.d/conf
+mkdir ${HOME}/.emacs.d/public_repos
+mkdir ${HOME}/.emacs.d/site-lisp
 
 
 # emacs true color用の設定．
