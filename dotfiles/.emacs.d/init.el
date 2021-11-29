@@ -27,6 +27,7 @@
 
 
 ;;;; サブディレクトリも自動でロードパスを追加する関数（add-to-load-path関数の定義）
+;;2021/11/29 この関数はdirが実際にないとエラーになってしまう。
   (defun add-to-load-path (&rest paths)
   (let (path)
   (dolist (path paths paths)
