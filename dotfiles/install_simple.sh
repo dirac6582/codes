@@ -24,15 +24,27 @@ for f in .??*; do
 done
 
 # init.elのリンクをはる．
-mkdir ${HOME}/.emacs.d
+if [ ! -d ${HOME}/.emacs.d ];then
+    mkdir ${HOME}/.emacs.d
+fi
 ln -snfv ${PWD}/.emacs.d/init.el ~/.emacs.d/init.el
 
 # make directories for emacs
-mkdir ${HOME}/.emacs.d/elpa
-mkdir ${HOME}/.emacs.d/elisp
-mkdir ${HOME}/.emacs.d/conf
-mkdir ${HOME}/.emacs.d/public_repos
-mkdir ${HOME}/.emacs.d/site-lisp
+if [ ! -d ${HOME}/.emacs.d/elpa ];then
+    mkdir ${HOME}/.emacs.d/elpa
+fi
+if [ ! -d ${HOME}/.emacs.d/elips ];then
+    mkdir ${HOME}/.emacs.d/elips
+fi
+if [ ! -d ${HOME}/.emacs.d/conf ];then
+    mkdir ${HOME}/.emacs.d/conf
+fi
+if [ ! -d ${HOME}/.emacs.d/public_repos ];then
+    mkdir ${HOME}/.emacs.d/public_repos
+fi
+if [ ! -d ${HOME}/.emacs.d/site-lisp ];then
+    mkdir ${HOME}/.emacs.d/site-lisp
+fi
 
 # sshのlinkをはる。
 mkdir ${HOME}/.ssh
