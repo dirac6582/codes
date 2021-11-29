@@ -45,7 +45,8 @@
 !/install_brew.sh
 
 #emacs
-!/init.el
+!/.emacs.d
+!/.emacs.d/**
 !/.terminfo
 !/.terminfo/**
 
