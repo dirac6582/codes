@@ -14,6 +14,7 @@ brew "sqlite"
 # commands
 brew "inetutils"
 brew "imagemagick"
+brew "youtube-dl"
 brew "git-lfs"
 brew "hub"     #githubの上級コマンド
 brew "macfuse" # needed for sshfs
