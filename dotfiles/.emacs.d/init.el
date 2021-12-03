@@ -37,7 +37,7 @@
   (normal-top-level-add-subdirs-to-load-path))))))
 ;;
 ;;~/.emacs.d/elisp ディレクトリをロードパスに追加
-(add-to-list 'load-path "~/.emacs.d/elpa/doom-modeline-2.9.2/")
+;;(add-to-list 'load-path "~/.emacs.d/elpa/doom-modeline-2.9.2/")
 ;;
 ;; 
 ;; ターミナル　パスを通していないので，以下を参照すること
@@ -662,7 +662,7 @@
 
 ;;https://qiita.com/twitte_raru/items/6f02b6a8b6020a0e4f64
 ;;これは，どうもdoom-modeline-iconsと言うiconフォントを使っていて，それが文字化けの原因になっているようだ．
-(require 'doom-modeline)
+(use-package doom-modeline)
 (doom-modeline-mode 1)
 ;;:custom
 (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
