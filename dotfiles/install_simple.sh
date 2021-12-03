@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+dotfiles_logo='
+      | |     | |  / _(_) |           
+    __| | ___ | |_| |_ _| | ___  ___  
+   / _` |/ _ \| __|  _| | |/ _ \/ __| 
+  | (_| | (_) | |_| | | | |  __/\__ \ 
+   \__,_|\___/ \__|_| |_|_|\___||___/ 
+  *** WHAT IS INSIDE? ***
+  1. Download https://github.com/b4b4r07/dotfiles.git
+  2. Symlinking dot files to your home directory
+  3. Execute all sh files within `etc/init/` (optional)
+  See the README for documentation.
+'
+echo "$dotfiles_logo"
+
 # 未定義な変数があったら途中で終了する
 set -u
 
@@ -10,6 +24,10 @@ cd $BASEDIR
 
 # dotfilesディレクトリにある、ドットから始まり2文字以上の名前のファイルに対して
 # dirに対してもlinkを貼ろうとするのでそれはやめさせる。
+
+echo 
+echo "linking dot files ..."
+echo
 for f in .??*; do
     [ "$f" = ".git" ] && continue
     [ "$f" = ".gitignore" ] && continue
@@ -30,6 +48,9 @@ fi
 ln -snfv ${PWD}/.emacs.d/init.el ~/.emacs.d/init.el
 
 # make directories for emacs
+echo
+echo "making directories for emacs..."
+echo
 if [ ! -d ${HOME}/.emacs.d/elpa ];then
     mkdir ${HOME}/.emacs.d/elpa
 fi

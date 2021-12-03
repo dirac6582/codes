@@ -60,4 +60,4 @@
 #ssh
 !/.ssh
 !/.ssh/config
-
+!/.ssh/make_sshkeys.sh

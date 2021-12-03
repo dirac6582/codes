@@ -59,6 +59,7 @@ cask "font-menlo-for-powerline"
 
 # cask
 # cask "anaconda" 現在M1macに非対応
+cask "xquartz" # need password
 cask "google-chrome"
 cask "hiddenbar"
 cask "iterm2"
@@ -76,16 +77,15 @@ cask "alfred"
 cask "deepl"
 cask "dropbox"
 cask "grammarly"
-cask "background-music" #現在M1macに非対応
 cask "itsycal"
 cask "db-browser-for-sqlite" 
-cask "background-music" #password必須?
-cask "google-drive" #passwordが必須
-cask "zoom"  #passwordを要求された．どうも自動で起動したっぽくて，今後改善が必要．
+cask "background-music" #need password. not suitable for M1 mac
+cask "google-drive" #need password
+cask "zoom"  #need password
 
 # cask for Lab
 cask "apache-directory-studio"
-cask "nextcloud"
+cask "nextcloud" # need password
 
 
 # appstore

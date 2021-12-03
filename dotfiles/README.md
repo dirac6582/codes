@@ -10,15 +10,16 @@
 ## 実際の設定
 1, 事前準備
 install xcode command line tools.
-install xquartz
 
 ssh connection to github
 
 clone "codes" repository in ${HOME}/works
 
 
-2, まだ実装できていないもの．
-他人の作ったgit repositoryを使用しているが，それをどうするべきか？
+2, できること。
+
+
+- clone.sh 他人の作ったgit repositoryをcloneする。
 - ~/src/z.sh
 - 
 
@@ -41,11 +42,9 @@ clone "codes" repository in ${HOME}/works
 
 
 
-
 !! causion !!
 before installation,
 - xcode Tools
-- X11
 are needed.
 
 
@@ -114,7 +113,7 @@ https://qiita.com/takeshisakuma/items/e9685fb9e394212247c0
 
 Due to security issue
 - keepassXC key files
-- ssh
+- ssh key files
 - 
 
 
@@ -131,3 +130,26 @@ https://www.tweeeety.blog/entry/20121129/1354192716
 tic -x -o ~/.terminfo terminfo-24bit.src
 を実行すること．
 
+
+
+6, TODO
+
+２、色々echoで情報を出すようにしたい。
+
+３、https://github.com/b4b4r07/dotfiles/blob/master/Makefile
+を参考に、makeで自動的にやってくれるようにしたい。
+
+５、やはりcodesとdotfileは分けておくべきでは？ という気がする。 今更どうしようもないのかもしれないけど。
+→ 一応そういうわけでもないかもしれない。いずれにせよ一回試すべき。
+→ というのも、わざわざgitにssh接続しなくて良いように、公開repositoryにしようと思うので。今使用しているdotfilesレポジトリがあるので、それを利用する形に変更したい。
+→ これをやる場合、キーパスファイルやsshのファイルなどは同じrepositoryでは保管できなくなるので注意。
+→ 後はsshkeygenのスクリプトも作って.sshディレクトリに入れておいた方が良い。
+
+８、pdfpc：プレゼンテーションツール
+
+
+
+9, python setting
+https://mitsudo.net/python環境の構築-mac-with-anaconda-by-homebrew/
+
+http://omilab.naist.jp/~mukaigawa/misc/Makefile.html
