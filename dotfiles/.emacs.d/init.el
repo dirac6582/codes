@@ -156,6 +156,10 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;;(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+;;(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
+
 (package-initialize)
 (unless package-archive-contents (package-refresh-contents))
 (dolist (pkg my-favorite-package-list)
@@ -879,7 +883,7 @@
 ;;https://qiita.com/ytanto/items/c6e624fa099d8d12a4db#open-junk-file
 ;;任意の書式のファイルをショトカ\C-x jで開けるので便利．
 
-(when (require 'open-junk-file)
+(when (use-package open-junk-file)
   (setq open-junk-file-format "${HOME}/Documents/emacs_junk/%Y-%m-%d-%H%M%S.")
   (global-set-key (kbd "C-x j") 'open-junk-file))
 
@@ -942,7 +946,7 @@
 ;;\C-z p   ::back to previous screen
 
 ;; elscreen（上部タブ）を導入する．
-(require 'elscreen)
+(use-package elscreen)
 (elscreen-start)
 ;;;set-keyの変更．以下から持ってきた
 ;;https://qiita.com/blue0513/items/ff8b5822701aeb2e9aae
@@ -1397,16 +1401,27 @@
 ;;undohist
 ;;emacsのデフォルト機能undoを永続的に使えるようにする
 ;;undo自体は\C-x u で，一つ前の操作を取り消せる
-(when (require 'undohist nil t)
-  (undohist-initialize))
+;;https://www-he.scphys.kyoto-u.ac.jp/member/shotakaha/dokuwiki/doku.php?id=toolbox:emacs:undohist:start
+(use-package undohist
+  :ensure t
+  :config
+  (setq undohist-ignored-files '("/tmp" "COMMIT_EDITMSG"))
+  (undohist-initialize)
+    )
 
 ;;undo-tree
 ;;undoの履歴を辿ることができる．\C-uでundoを実行すると別bufferにtreeを出してくれる．
 ;;戻したい所にcursorを移動して，qでbufferを抜ける．
-(when (require 'undo-tree nil t)
+;(when (use-package undo-tree nil t)
   ;; C-'にredoを割り当てる（通常のundoと差別化したい時に使う．defaultではundoと同じkbyで，undoを上書きする）
   ;; (define-kry global-map (kby "\C-'") 'undo-tree-redo)
-  (global-undo-tree-mode))
+;  (global-undo-tree-mode))
+(use-package undo-tree
+  :ensure t
+  :config
+ (global-undo-tree-mode)
+  )
+
 
 ;;;;==============================;;;;
 ;;;;==============================;;;;
