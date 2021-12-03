@@ -223,7 +223,7 @@
 ;;http://higepon.hatenablog.com/entry/20080731/1217491155
 
 ;;auto-insertの有効化
-(require 'autoinsert)
+(use-package autoinsert)
 (add-hook 'find-file-hooks 'auto-insert)
 ;;insertするサンプルファイルの置き場所
 (setq auto-insert-directory "~/.emacs.d/elisp/insert/")
