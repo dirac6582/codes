@@ -442,8 +442,9 @@ function ssh_local() {
 # pyenv
 # pyenv
 #https://mitsudo.net/python環境の構築-mac-with-anaconda-by-homebrew/
-PYENV_ROOT=~/.pyenv
+export PYENV_ROOT=~/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init --path)" # https://commte.net/7259
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
