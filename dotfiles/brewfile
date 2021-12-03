@@ -8,12 +8,13 @@
 brew "mas"
 brew "emacs"
 brew "gnuplot"
+brew "sqlite"
 
 
 # commands
 brew "inetutils"
 brew "imagemagick"
-brew "sqlite"
+brew "git-lfs"
 brew "hub"     #githubの上級コマンド
 brew "macfuse" # needed for sshfs
 brew "gromgit/fuse/sshfs-mac" #original sshfs is deprecated in brew. see https://blog.kmdkuk.com/2021/06/05/macでsshfsをインストール.html 

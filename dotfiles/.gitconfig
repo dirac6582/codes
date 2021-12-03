@@ -21,6 +21,7 @@
 	co = commit
 	br = branch
 	ck = checkout
+# git-lfs setting. you need to install git-lfs via homebrew
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
