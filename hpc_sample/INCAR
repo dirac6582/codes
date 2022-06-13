@@ -1,0 +1,63 @@
+System = rutile TiO2
+
+
+# start parameters for this Run (automatic defaults, hence not often required)
+      ISTART = 1 #  job   : 0-new  1- orbitals from WAVECAR
+      ICHARG = 0 #  charge: 1-file 2-atom 10-const 0-from wavecar
+      LREAL = .FALSE. # FALSE::presise, recommended for phonon. 
+      ISPIN  = 1 # スピンの考慮 する:2 しない:1(def)
+      LWAVE=.TRUE.
+      LCHARG=.TRUE.
+
+      
+# parallel
+      NCORE = 16
+      KPAR = 32
+"
+ MPS = 1
+ NSIM = 16   # 一度に計算するバンド数(def:4) GPUVASPで使用 限界まで多くする
+"
+
+
+# electric optimization
+      PREC   =  Accurate # 精度 Low|Medium|High|Normal|Accurate| ENCUTを自動設定
+      ALGO   =  Normal        # alorithm for electron optimization, can be also FAST or ALL
+      EDIFF  =  1E-10       # SCFの収束条件eV  def:1E-4 (1Ryd=13.6 eV)
+      NELM   = 120        # of ELM steps, sometimes default(60) is too small
+      ENCUT  = 800.00    # in eV # defaults from POTCAR, but wise to include
+"
+ Mind: In most cases, the convergence speed is exponential, so often, the cost for the few additional iterations is small. For high precision calculations, we recommend decreasing EDIFF to 1E-6. For finite difference calculations (e.g. phonons), even EDIFF = 1E-7 might be required in order to obtain very accurate results.
+"
+      
+# broadening and DOS related values; this works almost always
+      SIGMA  =  0.03
+      ISMEAR =  0               ! broadening in eV, -4-tet -1-fermi 0-gaus
+
+
+
+# ionic relaxation
+       ISIF=3    # change of internal parameter, shape and volume simultaneously.
+"
+ISIF	calculate	degrees-of-freedom
+forces	Stress tensor	positions	cell shape	cell volume
+0	yes	no	yes	no	no
+1	yes	trace only	yes	no	no
+2	yes	yes	yes	no	no
+3	yes	yes	yes	yes	yes
+4	yes	yes	yes	yes	no
+5	yes	yes	no	yes	no
+6	yes	yes	no	yes	yes
+7	yes	yes	no	no	yes
+"
+      IBRION =2 # conjugate-gradient, often 1 (RMM-DISS) is faster
+      NSW=100   # sets the maximum number of ionic steps
+      EDIFFG = 1E-10 # default:EDIFF×10. 
+      POTIM = 0.5 # step for ionic-motion (for MD in fs)
+
+
+# Born Effective Charge
+#1# DFPT (faster), but does not allow for METAGGA use. ######################
+#IBRION = 8; LEPSILON=.TRUE.
+#2# Finite differences (slower). ############################################
+#IBRION = 6; LPEAD=.TRUE; LCALCEPS=.TRUE.
+#NFREE = 2 ; POTIM = 0.015
