@@ -1,7 +1,11 @@
 (undo-tree-save-format-version . 1)
-"eaa3d84cb77d92a21b111fd1e37f53edc1ff9de0"
-[nil nil nil nil (25254 42875 19110 0) 0 nil]
-([nil nil ((1 . 10) (t . -1)) nil (25254 42875 19109 0) 0 nil])
-([nil nil (("s" . -5) (undo-tree-id0 . -1) (undo-tree-id1 . -1) 6 (t 25254 42867 877113 956000)) nil (25254 42875 19107 0) 0 nil])
-([nil current ((5 . 6)) nil (25254 42875 19094 0) 0 nil])
+"7d65523f2a5afb69d76824dd1dfa62a34faa3197"
+[nil nil nil nil (25254 42945 719772 0) 0 nil]
+([nil nil ((1 . 10) (t . -1)) nil (25254 42945 719771 0) 0 nil])
+([nil nil (("s" . -5) 6 (t 25254 42867 877113 956000)) nil (25254 42945 719770 0) 0 nil])
+([nil nil ((5 . 6)) nil (25254 42945 719769 0) 0 nil])
+([nil nil ((1 . 2) (t 25254 42875 23014 827000)) nil (25254 42945 719768 0) 0 nil])
+([nil nil ((1 . 11)) nil (25254 42945 719767 0) 0 nil])
+([nil nil ((" " . 1)) nil (25254 42945 719766 0) 0 nil])
+([nil current ((".DS_Store" . 11) (undo-tree-id0 . -9) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) (undo-tree-id4 . -1) (undo-tree-id5 . -1) (undo-tree-id6 . -1) (undo-tree-id7 . -1) (undo-tree-id8 . -1) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) (undo-tree-id12 . -1) (undo-tree-id13 . -1) (undo-tree-id14 . -1) (undo-tree-id15 . -9)) nil (25254 42945 719763 0) 0 nil])
 nil
