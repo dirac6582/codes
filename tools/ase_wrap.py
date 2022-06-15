@@ -10,7 +10,6 @@ import argparse    # 1. argparseをインポート
 parser = argparse.ArgumentParser(description='ase wrapper  ')    # 2. パーサを作る
 
 # 3. parser.add_argumentで受け取る引数を追加していく
-parser.add_argument('--inp','-i', help='input file type', choices=['vasp', 'cif'], required=True) 
 parser.add_argument('--out','-o', help='output file type', choices=['vasp', 'cif'], required=True )
 parser.add_argument('input', help='input filename') 
 parser.add_argument('output', help='output filename')
@@ -33,7 +32,6 @@ if __name__ == '__main__':
   print("")
   #
   args = parser.parse_args()    # 4. 引数を解析
-  in_filetype  = args.inp
   out_filetype = args.out
   in_filename  = args.input
   out_filename = args.output
@@ -45,6 +43,6 @@ if __name__ == '__main__':
   print("")
   #
   from ase import io
-  atoms = io.read(in_filename)
+  atoms = io.read(in_filename) # do not need to specify input file format!!
   atoms.write(out_filename, format = out_filetype)
 
