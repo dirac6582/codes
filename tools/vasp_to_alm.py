@@ -67,9 +67,9 @@ def read_write(VASP_input, ALM_output):
       f2.write("/\n")
       f2.write("&cell\n")
       f2.write("1.8897259886\n")  # convert from bohr to Ang
-      #
-      ## lattice constantを出力
-      if counter==2 or counter==3 or counter==4:
+    #
+    ## lattice constantを出力
+    if counter==2 or counter==3 or counter==4:
         f2.write(data)  #print (data)
     #
     if counter==4:
