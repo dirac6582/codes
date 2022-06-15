@@ -158,6 +158,14 @@ if __name__ == '__main__':
     For details of available options, please type
     $ python make_modedisp.py -h
     '''
+      #
+    print("*****************************************************************")
+    print("    eigen_to_vasp.py --  Generator of VASP input file            ")
+    print("                      Along the specific eigen mode              ")
+    print("                      Version. 1.0.0                             ")
+    print("*****************************************************************")
+    print("")
+  #
     process(VASP_input, mode_input,displacement_size)
     
     
