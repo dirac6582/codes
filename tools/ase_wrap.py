@@ -45,6 +45,6 @@ if __name__ == '__main__':
   print("")
   #
   from ase import io
-  atoms = io.read(in_filename, format= in_filetype)
+  atoms = io.read(in_filename)
   atoms.write(out_filename, format = out_filetype)
 
