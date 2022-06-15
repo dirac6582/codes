@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+
+
 # ===================
 # 
 # ===================
-# Time-stamp: <2022-06-15 22:58:06 amanotomohito>
+# Time-stamp: <2022-06-16 00:32:09 amanotomohito>
 
 
 import numpy as np
