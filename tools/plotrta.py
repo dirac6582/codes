@@ -27,6 +27,9 @@ parser = argparse.ArgumentParser(description='ase wrapper  ')    # 2. パーサ�
 parser.add_argument('arg1'  , help='alamode *.kl files',nargs='+')    # 必須の引数を追加
 parser.add_argument('--tmin', help="minimum Temperature[K]", type=float, default="0.0")    # オプション引数（指定しなくても良い引数）を追加(type=で型指定)
 parser.add_argument('--tmax', help="maximum Temperature[K]", type=float, default="-1")    # オプション引数（指定しなくても良い引数）を追加(type=で型指定)
+parser.add_argument('--ymin', help="minimum LTC[W/mK]", type=float, default="0.0")   
+parser.add_argument('--ymax', help="maximum LTC[W/mK]", type=float, default="-1")    
+
 parser.add_argument('-l', '--log', help="set logscale for xy axis", default="no" )
 parser.add_argument('-a', '--axis', help="axis which is ploted. ", default="mean" )
 #
@@ -68,23 +71,31 @@ def decide_tmax(datas):
     return np.max(maxlist)
 
 # yのmaxminを取り出す．
-def get_y_minmax(datas):
-
-    ymin, ymax = [0, 0]
-
-    for i in range(len(datas)):
-        for j in range(len(datas[i])):
-            for k in range(1, len(datas[i][j])):
-                ytmp = datas[i][j][k]
-                ymin = min(ymin, ytmp)
-                ymax = max(ymax, ytmp)
-
+# この時，tmin,tmaxの範囲でのymin/ymaxを知る必要がある．
+def get_y_minmax(datas,tmin,tmax):
+    # 
+    ymin = []
+    ymax = []
+    # 
+    if plot_axis=="mean":
+        for i in range(len(datas)):
+            # まず，tmin,tmaxに応じたdatasのindexを取得
+            min_indx=np.where(datas[i][:,0]>=tmin)[0][0]
+            max_indx=np.where(datas[i][:,0]<=tmax)[0][-1]
+            print("tminより大きい要素", np.where(datas[i][:,0]>=tmin)[0][0]) #条件を満たす最初の要素
+            print("tmaxより小さい要素", np.where(datas[i][:,0]<=tmax)[0][-1]) #条件を満たす最後の要素
+            #
+            ymin.append(np.min((datas[i][min_indx:max_indx,1]+datas[i][min_indx:max_indx,5]+datas[i][min_indx:max_indx,9])/3))
+            ymax.append(np.max((datas[i][min_indx:max_indx,1]+datas[i][min_indx:max_indx,5]+datas[i][min_indx:max_indx,9])/3))
+        # 最終的に最小最大を出す    
+        ymin=np.min(np.array(ymin))
+        ymax=np.max(np.array(ymax))*1.1 # 1.1倍下駄を履かせておく
     return ymin, ymax
 
 
 
 # plotする
-def run_plot(datas,tmin,tmax):
+def run_plot(datas,tmin,tmax,ymin,ymax):
     # tmaxの指定
     if tmax==-1:
         print(" ")
@@ -92,10 +103,20 @@ def run_plot(datas,tmin,tmax):
         print("       Use maximum values in *.kl ")
         print(" ")
         tmax=decide_tmax(datas)
+    # ymaxの指定
+    if ymax==-1:
+        print(" ")
+        print(" WARNING : ymax is not specified. ")
+        print("       Automatic decision of ymax is used ")
+        print(" ")
+        ymin, ymax = get_y_minmax(datas,tmin,tmax)
+
 
     # datasにある複数のデータをプロットする，
     fig, ax = plt.subplots()
     ax.set_xlim(tmin,tmax) # plot range[K]
+    ax.set_ylim(ymin,ymax) # plot range[K]
+
 
     # これはなんだ？
     # gs = GridSpec(nrows=1, ncols=nax )
@@ -126,7 +147,7 @@ def run_plot(datas,tmin,tmax):
         #if options.print_key and iax == 0:
         #    ax.legend(loc='best', prop={'size': 10})
     ax.legend(loc='best', prop={'size': 10})
-    plt.savefig("band.pdf")
+    plt.savefig("ltc.pdf")
     plt.show()
 
 
@@ -151,6 +172,8 @@ if __name__ == '__main__':
     filenames = args.arg1
     tmin = args.tmin
     tmax = args.tmax
+    ymin = args.ymin
+    ymax = args.ymax
     plot_axis = args.axis
 
 
@@ -172,11 +195,14 @@ if __name__ == '__main__':
     # read *.kl
     datas=read_files(filenames)
     #
-    # decide tmax
-    decide_tmax(datas)
     #
+    # decide ymin, ymax
+    if ymax==-1:
+        ymin, ymax = get_y_minmax(datas,tmin,tmax)
+
     # plot datas
-    run_plot(datas,tmin,tmax)
+    # とりあえずyminは0で固定
+    run_plot(datas,tmin,tmax, 0, ymax)
 
 
     #nax, xticks_ax, xticklabels_ax, xmin_ax, xmax_ax, ymin, ymax, \
