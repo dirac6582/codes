@@ -43,7 +43,7 @@ args = parser.parse_args()    # 4. 引数を解析
 
 # font styles
 mpl.rc('font', **{'family': 'Times New Roman', 'sans-serif': ['Helvetica']})
-mpl.rc('xtick', labelsize=12)
+mpl.rc('xtick', labelsize=16)
 mpl.rc('ytick', labelsize=16)
 mpl.rc('axes', labelsize=16)
 mpl.rc('lines', linewidth=1.5)
@@ -132,8 +132,8 @@ def run_plot(datas,tmin,tmax,ymin,ymax):
         # 
         # 初めのデータの時にcaptionをつける
         if i == 0:
-            ax.set_ylabel("LTC (W/mK)", labelpad=20)
-            ax.set_xlabel("Temp (K)", labelpad=20)
+            ax.set_ylabel("LTC (W/mK)", labelpad=10)
+            ax.set_xlabel("Temp (K)", labelpad=10)
         else:
             ax.set_yticklabels([])
             ax.set_yticks([])
@@ -147,7 +147,9 @@ def run_plot(datas,tmin,tmax,ymin,ymax):
         #if options.print_key and iax == 0:
         #    ax.legend(loc='best', prop={'size': 10})
     ax.legend(loc='best', prop={'size': 10})
-    plt.savefig("ltc.pdf")
+    # plt.tight_layout()
+    # https://www.delftstack.com/ja/howto/matplotlib/save-figures-identical-to-displayed-figures-matplotlib/
+    plt.savefig("ltc.pdf", bbox_inches='tight')
     plt.show()
 
 
