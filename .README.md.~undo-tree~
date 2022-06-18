@@ -1,0 +1,18 @@
+(undo-tree-save-format-version . 1)
+"ffb17e62fcd7d89a8f302db8573e9f2e8ad90d61"
+[nil nil nil nil (25258 19902 488758 0) 0 nil]
+([nil nil ((200 . 202) (t 25258 19693 976220 673000)) nil (25258 19902 551105 0) 0 nil])
+([nil nil (("h" . -200) ("p" . -201) 202) nil (25258 19902 551104 0) 0 nil])
+([nil nil ((200 . 203) (t 25258 19733 524076 579000)) nil (25258 19902 551103 0) 0 nil])
+([nil nil ((#("R" 0 1 (fontified t markdown-heading (197 201 nil nil nil nil nil nil 197 200 200 201 201 201 #<buffer README.md>) markdown-heading-2-atx (197 201 nil nil nil nil nil nil 197 200 200 201 201 201 #<buffer README.md>) face markdown-header-face-2)) . -200) (undo-tree-id7 . -1) (#("E" 0 1 (fontified t markdown-heading (197 202 nil nil nil nil nil nil 197 200 200 202 202 202 #<buffer README.md>) markdown-heading-2-atx (197 202 nil nil nil nil nil nil 197 200 200 202 202 202 #<buffer README.md>) face markdown-header-face-2)) . -201) (undo-tree-id8 . -1) (#("A" 0 1 (fontified t markdown-heading (197 203 nil nil nil nil nil nil 197 200 200 203 203 203 #<buffer README.md>) markdown-heading-2-atx (197 203 nil nil nil nil nil nil 197 200 200 203 203 203 #<buffer README.md>) face markdown-header-face-2)) . -202) (undo-tree-id9 . -1) 203) nil (25258 19902 551102 0) 0 nil])
+([nil nil ((200 . 206)) nil (25258 19902 551099 0) 0 nil])
+([nil nil ((206 . 207)) nil (25258 19902 551098 0) 0 nil])
+([nil nil ((207 . 212)) nil (25258 19902 551098 0) 0 nil])
+([nil nil ((#("l" 0 1 (fontified t)) . -208) (undo-tree-id3 . -1) (#("u" 0 1 (fontified t)) . -209) (undo-tree-id4 . -1) (#("r" 0 1 (fontified t)) . -210) (undo-tree-id5 . -1) (#("m" 0 1 (fontified t)) . -211) (undo-tree-id6 . -1) 212) nil (25258 19902 551096 0) 0 nil])
+([nil nil ((208 . 209)) nil (25258 19902 551092 0) 0 nil])
+([nil nil ((#("s" 0 1 (fontified t)) . -207) (undo-tree-id1 . -1) (#("j" 0 1 (fontified t)) . -208) (undo-tree-id2 . -1) 209) nil (25258 19902 551091 0) 0 nil])
+([nil nil ((207 . 216)) nil (25258 19902 551088 0) 0 nil])
+([nil nil ((#("c" 0 1 (fontified t)) . -215) (undo-tree-id0 . -1) 216) nil (25258 19902 551086 0) 0 nil])
+([nil nil ((215 . 223)) nil (25258 19902 551025 0) 0 nil])
+([nil current ((223 . 233)) nil (25258 19902 551021 0) 0 nil])
+nil
