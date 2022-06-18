@@ -134,9 +134,9 @@ def run_plot(datas,tmin,tmax,ymin,ymax):
         if i == 0:
             ax.set_ylabel("LTC (W/mK)", labelpad=10)
             ax.set_xlabel("Temp (K)", labelpad=10)
-        else:
-            ax.set_yticklabels([])
-            ax.set_yticks([])
+        # else:
+        #    ax.set_yticklabels([])
+        #    ax.set_yticks([])
 
         # 
         # plt.axis([xmin_ax[iax], xmax_ax[iax], ymin, ymax])
