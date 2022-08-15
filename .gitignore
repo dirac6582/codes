@@ -1,2 +1,5 @@
 .DS_Store
 *~undo-tree~
+
+latex_template/
+beamer_sample/
